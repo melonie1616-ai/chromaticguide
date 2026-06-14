@@ -1,86 +1,35 @@
-/* Horizontal deck — Chromatic Guide */
-
-.deck-ui {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  background: rgba(246, 243, 237, 0.92);
-  border-top: 1px solid var(--rule);
-  backdrop-filter: blur(6px);
-}
-
-.deck-ui button {
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 0.9rem;
-  padding: 0.45rem 1rem;
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.deck-ui button:hover:not(:disabled) {
-  border-color: var(--ink-soft);
-}
-
-.deck-ui button:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.deck-counter {
-  font-size: 0.85rem;
-  color: var(--muted);
-  min-width: 4rem;
-  text-align: center;
-}
-
-.deck-progress {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: min(50vw, 420px);
-}
-
-.deck-progress-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--rule);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.deck-progress-dot.active {
-  background: var(--link);
-}
-
-.deck-hint {
-  position: fixed;
-  top: 0.75rem;
-  right: 1rem;
-  font-size: 0.75rem;
-  color: var(--muted);
-  z-index: 100;
-}
+/* Presentation deck — matches Chromatic Guide home style */
 
 body.deck-body {
   overflow: hidden;
   height: 100vh;
   display: block;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  font-weight: 300;
+}
+
+body.deck-body h1,
+body.deck-body h2,
+body.deck-body h3 {
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  font-weight: 300;
+}
+
+body.deck-body a {
+  color: #1a1a1a;
+  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+}
+
+body.deck-body a:hover {
+  border-bottom-color: #1a1a1a;
 }
 
 .deck-viewport {
+  position: relative;
+  z-index: 2;
   height: calc(100vh - 52px);
   overflow: hidden;
 }
@@ -100,59 +49,64 @@ body.deck-body {
   flex-direction: column;
   justify-content: center;
   overflow-y: auto;
-  background: var(--paper);
+  background: #ffffff;
 }
 
 .deck-slide-inner {
-  max-width: 52rem;
+  max-width: 46rem;
   margin: 0 auto;
   width: 100%;
 }
 
 .deck-slide-inner--wide {
-  max-width: 58rem;
+  max-width: 52rem;
 }
 
 .deck-slide h1 {
-  font-family: "Libre Baskerville", Georgia, serif;
   font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-  font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
 }
 
 .deck-slide h2 {
-  font-family: "Libre Baskerville", Georgia, serif;
   font-size: clamp(1.35rem, 3vw, 2rem);
-  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
 }
 
-.deck-slide .deck-sub {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--ink-soft);
-  line-height: 1.55;
-  margin: 0 0 1.25rem;
+.deck-slide h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 0.35rem;
+}
+
+.deck-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 1rem;
   max-width: 40rem;
 }
 
-.deck-slide .deck-meta {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-top: 1.5rem;
+.deck-meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 1.25rem;
 }
 
 .deck-kicker {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #888;
   margin: 0 0 0.5rem;
 }
 
 .deck-section-slide {
-  background: var(--paper-deep);
+  background: #fafafa;
 }
 
 .deck-section-slide h2 {
@@ -162,7 +116,7 @@ body.deck-body {
 .deck-list {
   margin: 0;
   padding-left: 1.2rem;
-  color: var(--ink-soft);
+  color: #444;
   line-height: 1.65;
 }
 
@@ -171,66 +125,7 @@ body.deck-body {
 }
 
 .deck-list strong {
-  color: var(--ink);
-}
-
-.deck-cols {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-
-.deck-col h3 {
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 1.05rem;
-  margin: 0 0 0.4rem;
-}
-
-.deck-col p {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.deck-prompt {
-  margin: 0.75rem 0 0;
-  padding: 0.85rem 1rem;
-  background: var(--paper-deep);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-
-.deck-prompt-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-  margin-bottom: 0.35rem;
-}
-
-.deck-stat-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem 2.5rem;
-  margin-top: 1rem;
-}
-
-.deck-stat {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-
-.deck-stat strong {
-  display: block;
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 1.35rem;
-  color: var(--ink);
+  color: #1a1a1a;
   font-weight: 400;
 }
 
@@ -243,45 +138,241 @@ body.deck-body {
 
 .deck-agenda li {
   counter-increment: agenda;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--rule);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ececec;
   font-size: 1.05rem;
-  color: var(--ink-soft);
+  color: #444;
 }
 
 .deck-agenda li::before {
   content: counter(agenda) ".";
-  font-family: "Libre Baskerville", Georgia, serif;
-  color: var(--link);
+  color: #1a1a1a;
   margin-right: 0.65rem;
+}
+
+.deck-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.deck-col p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.55;
 }
 
 .deck-quote {
   margin: 1rem 0 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--rule);
-  font-style: italic;
-  color: var(--muted);
+  padding: 0.85rem 0 0.85rem 1rem;
+  border-left: 2px solid #ececec;
   font-size: 0.95rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+.deck-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  font-style: normal;
+  color: #888;
+}
+
+.deck-stat {
+  display: inline-block;
+  margin: 0.5rem 1rem 0 0;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.deck-stat strong {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 0.15rem;
+}
+
+.deck-source {
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #ececec;
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+.deck-resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.deck-resource-list li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.deck-journey-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.deck-journey-step:last-child {
+  border-bottom: 0;
+}
+
+.deck-journey-num {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #666;
 }
 
 .deck-back {
   position: fixed;
-  top: 0.75rem;
-  left: 1rem;
+  top: 1rem;
+  left: clamp(1rem, 3vw, 2rem);
   z-index: 100;
-  font-size: 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
-  color: var(--muted);
+  color: #888;
+  border: 0;
 }
 
 .deck-back:hover {
-  color: var(--link);
+  color: #1a1a1a;
+}
+
+.deck-hint {
+  position: fixed;
+  top: 1rem;
+  right: clamp(1rem, 3vw, 2rem);
+  font-size: 0.75rem;
+  color: #aaa;
+  z-index: 100;
+}
+
+.deck-ui {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-top: 1px solid #ececec;
+  backdrop-filter: blur(6px);
+}
+
+.deck-ui button {
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.deck-ui button:hover:not(:disabled) {
+  border-color: #1a1a1a;
+  background: #fafafa;
+}
+
+.deck-ui button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.deck-counter {
+  font-size: 0.82rem;
+  color: #888;
+  min-width: 4rem;
+  text-align: center;
+}
+
+.deck-progress {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: min(50vw, 420px);
+}
+
+.deck-progress-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ececec;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.deck-progress-dot.active {
+  background: #1a1a1a;
+}
+
+body.deck-body .home-wheel {
+  z-index: 1;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .deck-slide {
+    padding-top: 3rem;
+  }
 }
 
 @media print {
-  .deck-ui, .deck-hint, .deck-back { display: none; }
-  .deck-viewport { height: auto; overflow: visible; }
-  .deck-track { flex-direction: column; transform: none !important; }
-  .deck-slide { min-width: auto; page-break-after: always; }
+  .deck-ui,
+  .deck-hint,
+  .deck-back,
+  .home-wheel {
+    display: none;
+  }
+
+  .deck-viewport {
+    height: auto;
+    overflow: visible;
+  }
+
+  .deck-track {
+    flex-direction: column;
+    transform: none !important;
+  }
+
+  .deck-slide {
+    min-width: auto;
+    page-break-after: always;
+  }
 }
