@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="chartTitle chartDesc">
+  <title id="chartTitle">Chromatic color swatch chart</title>
+  <desc id="chartDesc">A grid of color swatches spanning the spectrum, suggesting nuance between extremes.</desc>
+  <defs>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1a1a1a" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="paperShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f0f0f0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card backing -->
+  <rect x="48" y="32" width="824" height="456" rx="6" fill="url(#paperShade)" stroke="#e8e8e8" stroke-width="1" filter="url(#softShadow)"/>
+
+  <!-- Swatch grid: 14 x 7 chromatic steps -->
+  <g transform="translate(72, 56)">
+    <!-- Row 1 - reds to oranges -->
+    <g>
+      <rect x="0" y="0" width="48" height="40" fill="#5c1a1a"/><text x="24" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">187 C</text>
+      <rect x="54" y="0" width="48" height="40" fill="#8b2500"/><text x="78" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7621 C</text>
+      <rect x="108" y="0" width="48" height="40" fill="#b8320a"/><text x="132" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">1665 C</text>
+      <rect x="162" y="0" width="48" height="40" fill="#d44a12"/><text x="186" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">021 C</text>
+      <rect x="216" y="0" width="48" height="40" fill="#e86a1e"/><text x="240" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">151 C</text>
+      <rect x="270" y="0" width="48" height="40" fill="#f5923a"/><text x="294" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">144 C</text>
+      <rect x="324" y="0" width="48" height="40" fill="#f8b84e"/><text x="348" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7408 C</text>
+      <rect x="378" y="0" width="48" height="40" fill="#fcd86a"/><text x="402" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7404 C</text>
+      <rect x="432" y="0" width="48" height="40" fill="#e8e060"/><text x="456" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">5845 C</text>
+      <rect x="486" y="0" width="48" height="40" fill="#c8d848"/><text x="510" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">382 C</text>
+      <rect x="540" y="0" width="48" height="40" fill="#98c838"/><text x="564" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">376 C</text>
+      <rect x="594" y="0" width="48" height="40" fill="#68a828"/><text x="618" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7481 C</text>
+      <rect x="648" y="0" width="48" height="40" fill="#3a8820"/><text x="672" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7483 C</text>
+      <rect x="702" y="0" width="48" height="40" fill="#1a6018"/><text x="726" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">349 C</text>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(0, 68)">
+      <rect x="0" y="0" width="48" height="40" fill="#4a1848"/><text x="24" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2597 C</text>
+      <rect x="54" y="0" width="48" height="40" fill="#6a2088"/><text x="78" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2587 C</text>
+      <rect x="108" y="0" width="48" height="40" fill="#8a28a8"/><text x="132" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">254 C</text>
+      <rect x="162" y="0" width="48" height="40" fill="#a830c0"/><text x="186" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2582 C</text>
+      <rect x="216" y="0" width="48" height="40" fill="#c848d0"/><text x="240" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2573 C</text>
+      <rect x="270" y="0" width="48" height="40" fill="#e060d8"/><text x="294" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2365 C</text>
+      <rect x="324" y="0" width="48" height="40" fill="#f080e0"/><text x="348" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">245 C</text>
+      <rect x="378" y="0" width="48" height="40" fill="#f0a0e8"/><text x="402" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7436 C</text>
+      <rect x="432" y="0" width="48" height="40" fill="#e8c0e8"/><text x="456" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7430 C</text>
+      <rect x="486" y="0" width="48" height="40" fill="#d8d0e8"/><text x="510" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7443 C</text>
+      <rect x="540" y="0" width="48" height="40" fill="#b8b8d8"/><text x="564" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2715 C</text>
+      <rect x="594" y="0" width="48" height="40" fill="#8888c0"/><text x="618" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2725 C</text>
+      <rect x="648" y="0" width="48" height="40" fill="#5858a0"/><text x="672" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2735 C</text>
+      <rect x="702" y="0" width="48" height="40" fill="#383878"/><text x="726" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2745 C</text>
+    </g>
+    <!-- Row 3 - blues -->
+    <g transform="translate(0, 136)">
+      <rect x="0" y="0" width="48" height="40" fill="#102838"/><text x="24" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2965 C</text>
+      <rect x="54" y="0" width="48" height="40" fill="#103858"/><text x="78" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">3025 C</text>
+      <rect x="108" y="0" width="48" height="40" fill="#104878"/><text x="132" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">3015 C</text>
+      <rect x="162" y="0" width="48" height="40" fill="#106098"/><text x="186" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">3005 C</text>
+      <rect x="216" y="0" width="48" height="40" fill="#1878b8"/><text x="240" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2995 C</text>
+      <rect x="270" y="0" width="48" height="40" fill="#2890d0"/><text x="294" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2985 C</text>
+      <rect x="324" y="0" width="48" height="40" fill="#48a8e0"/><text x="348" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2975 C</text>
+      <rect x="378" y="0" width="48" height="40" fill="#68c0e8"/><text x="402" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">306 C</text>
+      <rect x="432" y="0" width="48" height="40" fill="#88d0f0"/><text x="456" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">304 C</text>
+      <rect x="486" y="0" width="48" height="40" fill="#a8e0f4"/><text x="510" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">2905 C</text>
+      <rect x="540" y="0" width="48" height="40" fill="#c8ecf8"/><text x="564" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">290 C</text>
+      <rect x="594" y="0" width="48" height="40" fill="#d8f0f8"/><text x="618" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">656 C</text>
+      <rect x="648" y="0" width="48" height="40" fill="#e8f4fa"/><text x="672" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">657 C</text>
+      <rect x="702" y="0" width="48" height="40" fill="#f4f8fc"/><text x="726" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">658 C</text>
+    </g>
+    <!-- Row 4 - earth + neutrals -->
+    <g transform="translate(0, 204)">
+      <rect x="0" y="0" width="48" height="40" fill="#2a2018"/><text x="24" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">412 C</text>
+      <rect x="54" y="0" width="48" height="40" fill="#4a3828"/><text x="78" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7533 C</text>
+      <rect x="108" y="0" width="48" height="40" fill="#685040"/><text x="132" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7531 C</text>
+      <rect x="162" y="0" width="48" height="40" fill="#886858"/><text x="186" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7527 C</text>
+      <rect x="216" y="0" width="48" height="40" fill="#a88068"/><text x="240" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7524 C</text>
+      <rect x="270" y="0" width="48" height="40" fill="#c8a088"/><text x="294" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7520 C</text>
+      <rect x="324" y="0" width="48" height="40" fill="#d8b8a0"/><text x="348" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7518 C</text>
+      <rect x="378" y="0" width="48" height="40" fill="#e8d0b8"/><text x="402" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7515 C</text>
+      <rect x="432" y="0" width="48" height="40" fill="#f0e0c8"/><text x="456" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7512 C</text>
+      <rect x="486" y="0" width="48" height="40" fill="#f4ece0"/><text x="510" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7506 C</text>
+      <rect x="540" y="0" width="48" height="40" fill="#ece8e4"/><text x="564" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Warm Gray 1</text>
+      <rect x="594" y="0" width="48" height="40" fill="#dcd8d4"/><text x="618" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Warm Gray 3</text>
+      <rect x="648" y="0" width="48" height="40" fill="#c8c4c0"/><text x="672" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Warm Gray 5</text>
+      <rect x="702" y="0" width="48" height="40" fill="#a8a4a0"/><text x="726" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Warm Gray 8</text>
+    </g>
+    <!-- Row 5 - mixed chromatic midtones -->
+    <g transform="translate(0, 272)">
+      <rect x="0" y="0" width="48" height="40" fill="#882040"/><text x="24" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7424 C</text>
+      <rect x="54" y="0" width="48" height="40" fill="#a82858"/><text x="78" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7425 C</text>
+      <rect x="108" y="0" width="48" height="40" fill="#c83878"/><text x="132" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7426 C</text>
+      <rect x="162" y="0" width="48" height="40" fill="#984868"/><text x="186" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">683 C</text>
+      <rect x="216" y="0" width="48" height="40" fill="#784878"/><text x="240" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7679 C</text>
+      <rect x="270" y="0" width="48" height="40" fill="#586898"/><text x="294" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7684 C</text>
+      <rect x="324" y="0" width="48" height="40" fill="#488878"/><text x="348" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7474 C</text>
+      <rect x="378" y="0" width="48" height="40" fill="#689858"/><text x="402" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7493 C</text>
+      <rect x="432" y="0" width="48" height="40" fill="#889838"/><text x="456" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7495 C</text>
+      <rect x="486" y="0" width="48" height="40" fill="#a8a828"/><text x="510" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">5835 C</text>
+      <rect x="540" y="0" width="48" height="40" fill="#c8a818"/><text x="564" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7405 C</text>
+      <rect x="594" y="0" width="48" height="40" fill="#d88818"/><text x="618" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">131 C</text>
+      <rect x="648" y="0" width="48" height="40" fill="#c85828"/><text x="672" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7578 C</text>
+      <rect x="702" y="0" width="48" height="40" fill="#984830"/><text x="726" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">7583 C</text>
+    </g>
+  </g>
+
+  <!-- Fan corner accent (Pantone-style chip stack) -->
+  <g transform="translate(780, 380) rotate(-12)" opacity="0.95">
+    <rect x="0" y="24" width="72" height="48" rx="2" fill="#e83828" stroke="#fff" stroke-width="2"/>
+    <rect x="4" y="16" width="72" height="48" rx="2" fill="#f0a818" stroke="#fff" stroke-width="2"/>
+    <rect x="8" y="8" width="72" height="48" rx="2" fill="#38a838" stroke="#fff" stroke-width="2"/>
+    <rect x="12" y="0" width="72" height="48" rx="2" fill="#2868c8" stroke="#fff" stroke-width="2"/>
+    <text x="48" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#fff">185 C</text>
+  </g>
+</svg>

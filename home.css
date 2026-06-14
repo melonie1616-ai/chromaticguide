@@ -27,7 +27,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* ── Header ── */
@@ -124,27 +123,21 @@
   line-height: 1.22;
   letter-spacing: -0.02em;
   max-width: 16em;
-  margin: 0;
+  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
   font-weight: 300;
   color: #1a1a1a;
 }
 
-/* Pantone fan wheel — bottom-right, partially cropped */
-.home-wheel {
-  position: fixed;
-  right: -12%;
-  bottom: -14%;
-  width: min(72vw, 680px);
-  height: min(72vw, 680px);
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.96;
+.home-visual {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 0;
 }
 
-.home-wheel img {
+.home-visual img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 /* ── Footer ── */
@@ -337,22 +330,5 @@
 
   .home-nav-end {
     justify-self: start;
-  }
-
-  .home-wheel {
-    right: -28%;
-    bottom: -22%;
-    width: min(95vw, 520px);
-    height: min(95vw, 520px);
-    opacity: 0.88;
-  }
-}
-
-@media (min-width: 1100px) {
-  .home-wheel {
-    right: -6%;
-    bottom: -10%;
-    width: 720px;
-    height: 720px;
   }
 }
