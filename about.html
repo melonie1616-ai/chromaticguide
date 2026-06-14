@@ -8,87 +8,91 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/home.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-title">Chromatic <em>Guide</em></span>
+<body class="page-home">
+  <div class="home-shell">
+    <header class="home-header">
+      <a class="home-logo" href="index.html">
+        <span class="home-logo-mark" aria-hidden="true"></span>
+        <span class="home-logo-text">Chromatic Guide</span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="resources/">Resources</a>
-        <a href="presentation/ai-for-project-managers.html">Presentation</a>
-        <a href="about.html" aria-current="page">About</a>
+      <nav class="home-nav" aria-label="Main">
+        <a class="home-pill" href="resources/">Resources</a>
       </nav>
+      <nav class="home-nav home-nav-end" aria-label="Secondary">
+        <a class="home-pill" href="about.html" aria-current="page">About</a>
+      </nav>
+    </header>
+
+    <main class="home-main">
+      <article class="home-content home-prose">
+        <h1 class="home-page-title">About</h1>
+        <p class="home-page-lead">Who I am and why this site exists.</p>
+
+        <h2>Who I am</h2>
+        <p>
+          I&rsquo;m Melonie — a program and project leader who wears a lot of hats: program manager,
+          facilitator, event organizer, operations-minded director, and whatever else the work needs
+          that week. I use AI regularly, but I&rsquo;m not interested in letting it replace the people part.
+          That part is still the point.
+        </p>
+        <p>
+          I&rsquo;m also a musician — French horn and piano. Music taught me early that the interesting
+          stuff often lives between the obvious notes: half-steps, harmony, when to hold a fermata and
+          let the room breathe. That&rsquo;s where the name <strong>Chromatic Guide</strong> comes from —
+          not hype, but nuance.
+        </p>
+
+        <h2>Why this site</h2>
+        <p>
+          I built this site to share thoughts, techniques, and practical resources with others
+          who run programs, meetings, and teams. I want to help people find a sane balance — especially
+          right now, between human judgment and AI capability.
+        </p>
+        <p>You&rsquo;ll find things like:</p>
+        <ul>
+          <li>Short essays on what to automate and what not to</li>
+          <li>1-pagers and checklists you can actually use</li>
+          <li>Use cases from real work (genericized — no employer stories)</li>
+          <li>Honest notes on tools I&rsquo;ve tried</li>
+        </ul>
+
+        <h2>What I believe</h2>
+        <p>
+          AI is a strong second chair — useful for prep, drafts, and clearing friction. It is not
+          the facilitator, the program owner, or the person who holds trust in the room. You are.
+        </p>
+        <p>
+          Good work is <em>chromatic</em>: not all-or-nothing, not people versus machines — but
+          judgment about where each belongs.
+        </p>
+
+        <h2>What this site is not</h2>
+        <ul>
+          <li>Not affiliated with my employer — views here are my own</li>
+          <li>Not &ldquo;replace your team with AI&rdquo; content</li>
+          <li>Not a catalog of every new tool — only what I&rsquo;ve used and found worth sharing</li>
+        </ul>
+
+        <p class="home-note">
+          This is a personal site. Content here is written for a general audience and deliberately
+          avoids employer-specific names, tools, or internal details.
+        </p>
+      </article>
+    </main>
+
+    <div class="home-wheel" aria-hidden="true">
+      <img src="assets/pantone-wheel.svg" width="800" height="800" alt="" />
     </div>
-    <hr class="spectrum" aria-hidden="true" />
-  </header>
 
-  <main>
-    <article class="container container--narrow prose">
-      <h1>About</h1>
-      <p class="page-subtitle">Who I am and why this site exists.</p>
-
-      <h2>Who I am</h2>
-      <p>
-        I&rsquo;m Melonie — a program and project leader who wears a lot of hats: program manager,
-        facilitator, event organizer, operations-minded director, and whatever else the work needs
-        that week. I use AI regularly, but I&rsquo;m not interested in letting it replace the people part.
-        That part is still the point.
-      </p>
-      <p>
-        I&rsquo;m also a musician — French horn and piano. Music taught me early that the interesting
-        stuff often lives between the obvious notes: half-steps, harmony, when to hold a fermata and
-        let the room breathe. That&rsquo;s where the name <strong>Chromatic Guide</strong> comes from —
-        not hype, but nuance.
-      </p>
-
-      <h2>Why this site</h2>
-      <p>
-        I built this site to share thoughts, techniques, and practical resources with others
-        who run programs, meetings, and teams. I want to help people find a sane balance — especially
-        right now, between human judgment and AI capability.
-      </p>
-      <p>You&rsquo;ll find things like:</p>
-      <ul>
-        <li>Short essays on what to automate and what not to</li>
-        <li>1-pagers and checklists you can actually use</li>
-        <li>Use cases from real work (genericized — no employer stories)</li>
-        <li>Honest notes on tools I&rsquo;ve tried</li>
-      </ul>
-
-      <h2>What I believe</h2>
-      <p>
-        AI is a strong second chair — useful for prep, drafts, and clearing friction. It is not
-        the facilitator, the program owner, or the person who holds trust in the room. You are.
-      </p>
-      <p>
-        Good work is <em>chromatic</em>: not all-or-nothing, not people versus machines — but
-        judgment about where each belongs.
-      </p>
-
-      <h2>What this site is not</h2>
-      <ul>
-        <li>Not affiliated with my employer — views here are my own</li>
-        <li>Not &ldquo;replace your team with AI&rdquo; content</li>
-        <li>Not a catalog of every new tool — only what I&rsquo;ve used and found worth sharing</li>
-      </ul>
-
-      <p class="note">
-        This is a personal site. Content here is written for a general audience and deliberately
-        avoids employer-specific names, tools, or internal details.
-      </p>
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>By Melonie</span>
-      <span>Work, like music, lives in the nuance.</span>
-    </div>
-  </footer>
+    <footer class="home-foot">
+      <span>By Melonie · Work, like music, lives in the nuance.</span>
+      <div class="home-foot-links">
+        <a href="resources/">Resources</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
