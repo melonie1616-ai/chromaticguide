@@ -305,6 +305,74 @@ main {
   color: var(--ink-soft);
 }
 
+/* Resource entries */
+.use-case {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.use-case:first-of-type {
+  padding-top: 0;
+}
+
+.use-case h3 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.08rem;
+  margin: 0 0 0.35rem;
+}
+
+.use-case-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.prompt-block {
+  margin: 0.65rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.featured-link {
+  display: block;
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-link:hover .featured-title {
+  color: var(--link);
+}
+
+.featured-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.featured-title {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+}
+
+.featured-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 /* ── Footer ── */
 .site-footer {
   margin-top: 3rem;

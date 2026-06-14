@@ -1,0 +1,287 @@
+/* Horizontal deck — Chromatic Guide */
+
+.deck-ui {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(246, 243, 237, 0.92);
+  border-top: 1px solid var(--rule);
+  backdrop-filter: blur(6px);
+}
+
+.deck-ui button {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deck-ui button:hover:not(:disabled) {
+  border-color: var(--ink-soft);
+}
+
+.deck-ui button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.deck-counter {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 4rem;
+  text-align: center;
+}
+
+.deck-progress {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: min(50vw, 420px);
+}
+
+.deck-progress-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rule);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.deck-progress-dot.active {
+  background: var(--link);
+}
+
+.deck-hint {
+  position: fixed;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  z-index: 100;
+}
+
+body.deck-body {
+  overflow: hidden;
+  height: 100vh;
+  display: block;
+}
+
+.deck-viewport {
+  height: calc(100vh - 52px);
+  overflow: hidden;
+}
+
+.deck-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.deck-slide {
+  min-width: 100vw;
+  height: 100%;
+  padding: 2.5rem clamp(1.5rem, 5vw, 4rem) 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  background: var(--paper);
+}
+
+.deck-slide-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.deck-slide-inner--wide {
+  max-width: 58rem;
+}
+
+.deck-slide h1 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.deck-slide h2 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+
+.deck-slide .deck-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+}
+
+.deck-slide .deck-meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 1.5rem;
+}
+
+.deck-kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.deck-section-slide {
+  background: var(--paper-deep);
+}
+
+.deck-section-slide h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.deck-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.deck-list li {
+  margin-bottom: 0.45rem;
+}
+
+.deck-list strong {
+  color: var(--ink);
+}
+
+.deck-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.deck-col h3 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+
+.deck-col p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.deck-prompt {
+  margin: 0.75rem 0 0;
+  padding: 0.85rem 1rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.deck-prompt-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.deck-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.deck-stat {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.deck-stat strong {
+  display: block;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.deck-agenda {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  counter-reset: agenda;
+}
+
+.deck-agenda li {
+  counter-increment: agenda;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.deck-agenda li::before {
+  content: counter(agenda) ".";
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: var(--link);
+  margin-right: 0.65rem;
+}
+
+.deck-quote {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.deck-back {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 100;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.deck-back:hover {
+  color: var(--link);
+}
+
+@media print {
+  .deck-ui, .deck-hint, .deck-back { display: none; }
+  .deck-viewport { height: auto; overflow: visible; }
+  .deck-track { flex-direction: column; transform: none !important; }
+  .deck-slide { min-width: auto; page-break-after: always; }
+}

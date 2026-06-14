@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use cases &amp; prompts — Chromatic Guide</title>
+  <meta name="description" content="AI use cases for project managers with example prompts and typical time saved." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-title">Chromatic <em>Guide</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../index.html">Home</a>
+        <a href="index.html" aria-current="page">Resources</a>
+        <a href="../presentation/ai-for-project-managers.html">Presentation</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <hr class="spectrum" aria-hidden="true" />
+  </header>
+
+  <main>
+    <article class="container container--narrow prose">
+      <h1>Use cases &amp; prompts</h1>
+      <p class="page-subtitle">
+        Examples from real PM work — genericized. Typical pattern: 10–15 AI assists per day,
+        meaningful hours reclaimed for strategy and people.
+      </p>
+
+      <div class="use-case">
+        <h3>Consolidating risks, issues, and dependencies</h3>
+        <p>Project health check across multiple status decks.</p>
+        <div class="prompt-block">Based on these PowerPoint documents, provide a consolidated list of Risks, Issues, and Dependencies. Put the data into Excel format.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~8 hours vs. manual slide-by-slide extraction</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Risk prioritization and scoring</h3>
+        <p>Objective scores for stakeholder discussions.</p>
+        <div class="prompt-block">Evaluate each item and assign a criticality score from 1 to 20. For each item, explain why — consider timeline sensitivity, impact on project success, and resource requirements.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~6 hours</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Timeline from meetings and messages</h3>
+        <p>Quick turnaround visual for leadership.</p>
+        <div class="prompt-block">Create a table of activities and milestones with dates, notes, and duration. Use available meetings, emails, and chat messages. Organize chronologically.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~8 hours → often under 30 minutes with edits</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Meeting notes → action items</h3>
+        <p>Structured output for trackers and follow-up.</p>
+        <div class="prompt-block">Very succinct, actionable summary. Key takeaways and next steps with owners for each topic. One table organized by workstream or key topic.</div>
+        <p class="use-case-meta"><strong>Typical manual cleanup:</strong> 30–45 minutes per meeting</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Executive summary</h3>
+        <p>Leadership-ready language, not raw notes.</p>
+        <div class="prompt-block">Executive summary with no more than 3 bullets. By topic: one bullet for an impactful takeaway and one for next steps.</div>
+      </div>
+
+      <div class="use-case">
+        <h3>Testing checklist from user stories</h3>
+        <p>Release prep across scenarios and acceptance criteria.</p>
+        <div class="prompt-block">Based on the user stories and descriptions in the attached file, create a detailed testing checklist.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~4–6 hours</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Project health check framework</h3>
+        <p>Structured review before a deep dive.</p>
+        <div class="prompt-block">I'm reviewing a project and want a health check. What key areas should I review (scope, schedule, budget, risks, stakeholders, governance, etc.)? For each area, outline best practices and specific questions I should ask.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~5–7 hours of framework research</p>
+      </div>
+
+      <div class="use-case">
+        <h3>High-level plan from backlog export</h3>
+        <p>Phases and milestones when agile work needs a timeline view.</p>
+        <div class="prompt-block">Based on this export of user stories, suggest a high-level project plan with phases, milestones, and dates. Put the output in Excel format.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~4 hours</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Clean exported descriptions</h3>
+        <p>HTML markup stripped from spreadsheet columns.</p>
+        <div class="prompt-block">Remove all HTML and markup in the Description column please.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~20 minutes of find-and-replace</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Tool comparison</h3>
+        <p>Structured evaluation for a selection decision.</p>
+        <div class="prompt-block">Compare popular roadmap tools across core features, collaboration, integrations, ease of use, governance, pricing, and best-fit use cases. Comparison table plus short summary.</div>
+        <p class="use-case-meta"><strong>Typical time saved:</strong> ~8–10 hours of research</p>
+      </div>
+
+      <div class="use-case">
+        <h3>Status meeting talking points</h3>
+        <p>Short scripts so updates stay within time.</p>
+        <div class="prompt-block">Create script and talking points for this slide. Match my usual style. No longer than 3 minutes to present.</div>
+      </div>
+
+      <p class="note">
+        Every example assumes approved tools, sanitized inputs, and a human review before anything is shared.
+        See <a href="guardrails.html">guardrails</a> and the full
+        <a href="../presentation/ai-for-project-managers.html">presentation</a>.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>By Melonie</span>
+      <span><a href="prompting.html">Prompting basics →</a></span>
+    </div>
+  </footer>
+</body>
+</html>

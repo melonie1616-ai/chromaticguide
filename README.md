@@ -1,46 +1,30 @@
 # Chromatic Guide
 
-Personal site — **chromaticguide.com**
+**https://chromaticguide.com** — balancing people, work, and AI.
 
-Balancing people, work, and AI. Light static HTML, hosted on GitHub Pages.
+## Site map
 
-## Structure
+| Path | Purpose |
+|------|---------|
+| `index.html` | Home |
+| `about.html` | About |
+| `resources/` | Resource index |
+| `resources/guardrails.html` | AI guardrails |
+| `resources/use-cases.html` | PM use cases + prompts |
+| `resources/prompting.html` | Prompting framework |
+| `presentation/ai-for-project-managers.html` | **Horizontal slide deck** (← → keys) for PMI July session |
 
-```
-chromaticguide/
-  index.html          Home
-  about.html          About
-  resources/          Guides, ideas, tool notes (stubs for now)
-  assets/css/site.css Shared styles
-  assets/favicon.svg
-  CNAME               chromaticguide.com
-```
+## Deploy
 
-## Deploy to GitHub
+Upload the contents of this folder to [melonie1616-ai/chromaticguide](https://github.com/melonie1616-ai/chromaticguide) on the `main` branch (GitHub web upload or push as `melonie1616-ai`).
 
-From this folder (after cloning your repo locally):
+## Present the deck
 
-```powershell
-cd path\to\chromaticguide
-git init
-git remote add origin https://github.com/melonie1616-ai/chromaticguide.git
-git add .
-git commit -m "Add light theme site: home, about, resources"
-git branch -M main
-git pull origin main --rebase
-git push -u origin main
-```
-
-If the repo already has commits (e.g. README), pull first, copy files in, then add/commit/push.
-
-Or copy files into your existing clone and push.
+Open `presentation/ai-for-project-managers.html` in a browser full screen (F11). Use **← →**, **Space**, or on-screen buttons. Link from home for attendees.
 
 ## Local preview
 
-Open `index.html` in a browser, or:
-
 ```powershell
+cd "path\to\chromaticguide"
 python -m http.server 8080
 ```
-
-Then visit http://localhost:8080
