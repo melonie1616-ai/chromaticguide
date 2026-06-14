@@ -3,95 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home — Chromatic Guide</title>
+  <title>Chromatic Guide — Balancing people, work, and AI</title>
   <meta name="description" content="Balancing people, work, and AI — practical notes and resources for program managers and facilitators." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-title">Chromatic <em>Guide</em></span>
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="resources/">Resources</a>
-        <a href="presentation/ai-for-project-managers.html">Presentation</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-    <hr class="spectrum" aria-hidden="true" />
+<body class="page-home">
+  <header class="home-header">
+    <a class="home-logo" href="index.html">
+      <span class="home-logo-mark" aria-hidden="true"></span>
+      <span class="home-logo-text">Chromatic Guide</span>
+    </a>
+    <nav class="home-nav" aria-label="Main">
+      <a class="home-pill" href="resources/">Resources</a>
+      <a class="home-pill" href="presentation/ai-for-project-managers.html">Presentation</a>
+    </nav>
+    <nav class="home-nav home-nav-end" aria-label="Secondary">
+      <a class="home-pill" href="about.html">About</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="hero">
-        <h1>Balancing people, work, and AI — without losing what matters.</h1>
-        <p class="hero-lead">
-          Notes and resources for people who run programs, facilitate meetings, and keep
-          the human part intact. What to use, what to skip, and what should never leave the room.
-        </p>
-      </section>
+  <main class="home-main">
+    <h1 class="home-headline">
+      Balancing people, work, and AI — without losing what matters.
+    </h1>
 
-      <a class="featured-link" href="presentation/ai-for-project-managers.html">
-        <p class="featured-label">July 2026 · PMI session</p>
-        <p class="featured-title">AI for Project Managers — slide presentation</p>
-        <p class="featured-desc">A balanced approach with mindset, guardrails, use cases, and prompts. Navigate left to right with arrow keys.</p>
-      </a>
+    <figure class="home-visual">
+      <img
+        src="assets/pantone-chart.svg"
+        width="920"
+        height="520"
+        alt="A color swatch chart spanning the spectrum — chromatic, not binary."
+      />
+    </figure>
 
-      <section class="section" aria-labelledby="browse-heading">
-        <h2 id="browse-heading">Browse</h2>
-        <ul class="link-list">
-          <li>
-            <a href="resources/guardrails.html">
-              <p class="link-list-title">Guardrails</p>
-              <p class="link-list-desc">Using AI responsibly — tools, data, and review habits.</p>
-            </a>
-          </li>
-          <li>
-            <a href="resources/use-cases.html">
-              <p class="link-list-title">Use cases &amp; prompts</p>
-              <p class="link-list-desc">Real PM scenarios with example prompts and typical time saved.</p>
-            </a>
-          </li>
-          <li>
-            <a href="resources/prompting.html">
-              <p class="link-list-title">Prompting basics</p>
-              <p class="link-list-desc">Clear, purpose, format — plus starter prompts for PM work.</p>
-            </a>
-          </li>
-          <li>
-            <a href="about.html">
-              <p class="link-list-title">About</p>
-              <p class="link-list-desc">Who I am, why Chromatic Guide exists, and what you won&rsquo;t find here.</p>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="stance" aria-labelledby="stance-heading">
-        <p class="stance-label" id="stance-heading">Where I&rsquo;m coming from</p>
-        <p>
-          You stay in the room. AI is useful for prep, drafts, and friction — not for judgment,
-          trust, or work only people can do.
-        </p>
-        <p>
-          Right now many of us are balancing <strong>people and AI</strong>. This site is where
-          I share what I&rsquo;m learning — chromatic, not binary.
-        </p>
-      </section>
-    </div>
+    <footer class="home-foot">
+      <span>By Melonie · Work, like music, lives in the nuance.</span>
+      <div class="home-foot-links">
+        <a href="resources/use-cases.html">Use cases</a>
+        <a href="resources/guardrails.html">Guardrails</a>
+        <a href="presentation/ai-for-project-managers.html">AI for PMs (slides)</a>
+      </div>
+    </footer>
   </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>By Melonie</span>
-      <span>Work, like music, lives in the nuance.</span>
-    </div>
-  </footer>
 </body>
 </html>
