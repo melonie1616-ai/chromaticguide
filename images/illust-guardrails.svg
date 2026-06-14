@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" aria-hidden="true">
+  <path d="M120 20 L200 50 L200 110 C200 155 120 190 120 190 C120 190 40 155 40 110 L40 50 Z" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <path d="M85 108 L105 128 L155 78" fill="none" stroke="#7a3b2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="210" text-anchor="middle" font-size="10" fill="#6b6560">Approved � Review � Protect</text>
+</svg>

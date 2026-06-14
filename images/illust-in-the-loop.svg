@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" aria-hidden="true">
+  <circle cx="130" cy="100" r="70" fill="none" stroke="#d4cec4" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="130" cy="100" r="44" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <circle cx="130" cy="82" r="12" fill="#ebe6dc" stroke="#2a2724" stroke-width="1.5"/>
+  <path d="M130 94 L130 118 M116 108 L144 108" stroke="#2a2724" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="130" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#2a2724">You</text>
+  <text x="130" y="140" text-anchor="middle" font-size="8" fill="#6b6560">review</text>
+  <!-- loop labels -->
+  <text x="130" y="28" text-anchor="middle" font-size="9" fill="#4a6670">Describe</text>
+  <text x="218" y="104" text-anchor="middle" font-size="9" fill="#4a6670">Adjust</text>
+  <text x="130" y="188" text-anchor="middle" font-size="9" fill="#4a6670">Share</text>
+  <text x="42" y="104" text-anchor="middle" font-size="9" fill="#4a6670">AI draft</text>
+  <path d="M130 38 L130 54 M196 100 L182 100 M130 162 L130 146 M64 100 L78 100" stroke="#7a3b2e" stroke-width="1.5" marker-end="url(#arr2)" opacity="0.6"/>
+  <defs>
+    <marker id="arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L5,3 L0,6 Z" fill="#7a3b2e"/>
+    </marker>
+  </defs>
+</svg>
