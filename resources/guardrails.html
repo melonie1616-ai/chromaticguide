@@ -8,72 +8,77 @@
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/home.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="../index.html">
-        <span class="brand-title">Chromatic <em>Guide</em></span>
+<body class="page-home">
+  <div class="home-shell">
+    <header class="home-header">
+      <a class="home-logo" href="../index.html">
+        <span class="home-logo-mark" aria-hidden="true"></span>
+        <span class="home-logo-text">Chromatic Guide</span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">Resources</a>
-        <a href="../presentation/ai-for-project-managers.html">Presentation</a>
-        <a href="../about.html">About</a>
+      <nav class="home-nav" aria-label="Main">
+        <a class="home-pill" href="index.html" aria-current="page">Resources</a>
       </nav>
+      <nav class="home-nav home-nav-end" aria-label="Secondary">
+        <a class="home-pill" href="../about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="home-main">
+      <article class="home-content home-prose">
+        <h1 class="home-headline">Guardrails</h1>
+        <p class="home-page-lead">Protecting data and people while you use AI.</p>
+
+        <h2>Tools</h2>
+        <ul>
+          <li>Use only <strong>approved, secure</strong> AI tools for your organization</li>
+          <li>Confirm what licenses and policies your employer provides before adding new apps</li>
+          <li>Check whether AI is already built into tools you use daily (Copilot in M365, etc.)</li>
+          <li>Avoid unverified or &ldquo;free&rdquo; tools when content is sensitive or internal</li>
+        </ul>
+
+        <h2>Safe use</h2>
+        <ul>
+          <li>Never paste or upload sensitive or confidential details into unapproved tools</li>
+          <li><strong>Always double-check</strong> AI output before sharing — models make mistakes</li>
+          <li>Watch for bias, especially in hiring, performance, or high-stakes decisions</li>
+          <li>If using open-source or self-hosted AI, involve IT/security — don&rsquo;t configure it alone</li>
+        </ul>
+
+        <h2>What you can usually upload (within policy)</h2>
+        <ul>
+          <li>Project plans, status reports, and risk logs</li>
+          <li>Meeting notes or transcripts you&rsquo;re allowed to store</li>
+          <li>Templates, playbooks, and anonymized data</li>
+        </ul>
+
+        <h2>Best practices</h2>
+        <ul>
+          <li>Read your organization&rsquo;s privacy and AI use policies first</li>
+          <li>Use approved platforms for anything that identifies people or projects</li>
+          <li>Give context: your role, audience, and the format you need</li>
+          <li>Review outputs the way you would a junior teammate&rsquo;s draft — carefully</li>
+        </ul>
+
+        <p class="home-note">
+          Speed is never worth a data leak or a decision made on bad AI output. When in doubt, ask IT or compliance — and keep the human review step.
+        </p>
+      </article>
+    </main>
+
+    <div class="home-wheel" aria-hidden="true">
+      <img src="../assets/pantone-wheel.svg" width="800" height="800" alt="" />
     </div>
-    <hr class="spectrum" aria-hidden="true" />
-  </header>
 
-  <main>
-    <article class="container container--narrow prose">
-      <h1>Guardrails</h1>
-      <p class="page-subtitle">Protecting data and people while you use AI.</p>
-
-      <h2>Tools</h2>
-      <ul>
-        <li>Use only <strong>approved, secure</strong> AI tools for your organization</li>
-        <li>Confirm what licenses and policies your employer provides before adding new apps</li>
-        <li>Check whether AI is already built into tools you use daily (Copilot in M365, etc.)</li>
-        <li>Avoid unverified or &ldquo;free&rdquo; tools when content is sensitive or internal</li>
-      </ul>
-
-      <h2>Safe use</h2>
-      <ul>
-        <li>Never paste or upload sensitive or confidential details into unapproved tools</li>
-        <li><strong>Always double-check</strong> AI output before sharing — models make mistakes</li>
-        <li>Watch for bias, especially in hiring, performance, or high-stakes decisions</li>
-        <li>If using open-source or self-hosted AI, involve IT/security — don&rsquo;t configure it alone</li>
-      </ul>
-
-      <h2>What you can usually upload (within policy)</h2>
-      <ul>
-        <li>Project plans, status reports, and risk logs</li>
-        <li>Meeting notes or transcripts you&rsquo;re allowed to store</li>
-        <li>Templates, playbooks, and anonymized data</li>
-      </ul>
-
-      <h2>Best practices</h2>
-      <ul>
-        <li>Read your organization&rsquo;s privacy and AI use policies first</li>
-        <li>Use approved platforms for anything that identifies people or projects</li>
-        <li>Give context: your role, audience, and the format you need</li>
-        <li>Review outputs the way you would a junior teammate&rsquo;s draft — carefully</li>
-      </ul>
-
-      <p class="note">
-        Speed is never worth a data leak or a decision made on bad AI output. When in doubt, ask IT or compliance — and keep the human review step.
-      </p>
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>By Melonie</span>
-      <span><a href="index.html">More resources</a></span>
-    </div>
-  </footer>
+    <footer class="home-foot">
+      <span>By Melonie · Work, like music, lives in the nuance.</span>
+      <div class="home-foot-links">
+        <a href="use-cases.html">Use cases</a>
+        <a href="guardrails.html">Guardrails</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
