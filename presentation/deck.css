@@ -1,4 +1,4 @@
-/* Presentation deck — matches Chromatic Guide home style */
+/* Presentation deck — Chromatic Guide (projector-friendly) */
 
 body.deck-body {
   overflow: hidden;
@@ -30,6 +30,7 @@ body.deck-body a:hover {
 .deck-viewport {
   position: relative;
   z-index: 2;
+  width: 100%;
   height: calc(100vh - 52px);
   overflow: hidden;
 }
@@ -42,64 +43,68 @@ body.deck-body a:hover {
 }
 
 .deck-slide {
-  min-width: 100vw;
+  flex: 0 0 auto;
+  width: 100%;
   height: 100%;
-  padding: 2.5rem clamp(1.5rem, 5vw, 4rem) 2rem;
+  box-sizing: border-box;
+  padding: 2rem clamp(1.5rem, 4vw, 3.5rem) 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
   overflow-y: auto;
   background: #ffffff;
 }
 
 .deck-slide-inner {
-  max-width: 46rem;
-  margin: 0 auto;
+  max-width: 52rem;
   width: 100%;
+  margin: 0;
+  padding-right: min(22vw, 240px);
 }
 
 .deck-slide-inner--wide {
-  max-width: 52rem;
+  max-width: 56rem;
 }
 
 .deck-slide h1 {
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-  line-height: 1.22;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
 }
 
 .deck-slide h2 {
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  line-height: 1.25;
+  font-size: clamp(2rem, 4.2vw, 3.35rem);
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
 }
 
 .deck-slide h3 {
-  font-size: 1rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 400;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.4rem;
 }
 
 .deck-sub {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: #444;
-  line-height: 1.6;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  color: #333;
+  line-height: 1.55;
   margin: 0 0 1rem;
-  max-width: 40rem;
+  max-width: 44rem;
 }
 
 .deck-meta {
-  font-size: 0.9rem;
-  color: #888;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #777;
   margin-top: 1.25rem;
 }
 
 .deck-kicker {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #888;
   margin: 0 0 0.5rem;
@@ -109,19 +114,16 @@ body.deck-body a:hover {
   background: #fafafa;
 }
 
-.deck-section-slide h2 {
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-}
-
 .deck-list {
   margin: 0;
-  padding-left: 1.2rem;
-  color: #444;
-  line-height: 1.65;
+  padding-left: 1.35rem;
+  color: #333;
+  line-height: 1.55;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
 }
 
 .deck-list li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 .deck-list strong {
@@ -138,10 +140,11 @@ body.deck-body a:hover {
 
 .deck-agenda li {
   counter-increment: agenda;
-  padding: 0.75rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid #ececec;
-  font-size: 1.05rem;
-  color: #444;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #333;
+  line-height: 1.45;
 }
 
 .deck-agenda li::before {
@@ -152,58 +155,58 @@ body.deck-body a:hover {
 
 .deck-cols {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1.25rem;
   margin-top: 1rem;
 }
 
 .deck-col p {
   margin: 0;
-  font-size: 0.92rem;
-  color: #666;
-  line-height: 1.55;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: #555;
+  line-height: 1.5;
 }
 
 .deck-quote {
   margin: 1rem 0 0;
   padding: 0.85rem 0 0.85rem 1rem;
-  border-left: 2px solid #ececec;
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.55;
+  border-left: 3px solid #ececec;
+  font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+  color: #444;
+  line-height: 1.5;
 }
 
 .deck-quote cite {
   display: block;
   margin-top: 0.5rem;
-  font-size: 0.82rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-style: normal;
   color: #888;
 }
 
 .deck-stat {
   display: inline-block;
-  margin: 0.5rem 1rem 0 0;
-  padding: 0.65rem 0.85rem;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.75rem 1rem;
   border: 1px solid #ececec;
   border-radius: 4px;
-  font-size: 0.88rem;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
   color: #444;
 }
 
 .deck-stat strong {
   display: block;
-  font-size: 1.35rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 300;
   color: #1a1a1a;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .deck-source {
   margin-top: 1.25rem;
   padding-top: 0.85rem;
   border-top: 1px solid #ececec;
-  font-size: 0.8rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
   color: #888;
   line-height: 1.5;
 }
@@ -215,10 +218,11 @@ body.deck-body a:hover {
 }
 
 .deck-resource-list li {
-  padding: 0.65rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid #ececec;
-  font-size: 0.95rem;
-  color: #444;
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+  color: #333;
+  line-height: 1.45;
 }
 
 .deck-journey-step {
@@ -235,15 +239,51 @@ body.deck-body a:hover {
 
 .deck-journey-num {
   flex-shrink: 0;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   border: 1px solid #d8d8d8;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: #666;
+}
+
+/* Split layout with illustrations */
+.deck-split {
+  display: grid;
+  grid-template-columns: 1fr min(280px, 32vw);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  max-width: min(62rem, 92vw);
+  padding-right: 0;
+}
+
+.deck-split--visual-right {
+  grid-template-columns: 1fr min(300px, 34vw);
+}
+
+.deck-split--visual-left {
+  grid-template-columns: min(280px, 32vw) 1fr;
+}
+
+.deck-visual {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-visual img {
+  width: 100%;
+  height: auto;
+  max-height: min(42vh, 320px);
+  object-fit: contain;
+}
+
+.deck-split .deck-text {
+  min-width: 0;
 }
 
 .deck-back {
@@ -342,14 +382,32 @@ body.deck-body a:hover {
   background: #1a1a1a;
 }
 
+/* Decorative wheel — keep off text area */
 body.deck-body .home-wheel {
   z-index: 1;
-  opacity: 0.9;
+  opacity: 0.55;
+  right: -18%;
+  bottom: -18%;
+  width: min(55vw, 520px);
+  height: min(55vw, 520px);
 }
 
-@media (max-width: 768px) {
-  .deck-slide {
-    padding-top: 3rem;
+@media (max-width: 900px) {
+  .deck-split,
+  .deck-split--visual-right,
+  .deck-split--visual-left {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+  }
+
+  .deck-slide-inner {
+    padding-right: 0;
+  }
+
+  .deck-visual {
+    order: -1;
+    max-width: 260px;
+    margin: 0 auto 0.75rem;
   }
 }
 
@@ -372,7 +430,7 @@ body.deck-body .home-wheel {
   }
 
   .deck-slide {
-    min-width: auto;
+    flex: none;
     page-break-after: always;
   }
 }
