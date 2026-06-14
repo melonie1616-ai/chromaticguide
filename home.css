@@ -27,6 +27,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ── Header ── */
@@ -123,21 +124,26 @@
   line-height: 1.22;
   letter-spacing: -0.02em;
   max-width: 16em;
-  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
+  margin: 0;
   font-weight: 300;
   color: #1a1a1a;
 }
 
-.home-visual {
-  margin: 0 auto;
-  max-width: 920px;
-  padding: 0;
+/* Circular Pantone fan — bottom-right, partially cropped */
+.home-wheel {
+  position: fixed;
+  right: -10%;
+  bottom: -12%;
+  width: min(70vw, 640px);
+  height: min(70vw, 640px);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.home-visual img {
+.home-wheel img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* ── Footer ── */
@@ -182,10 +188,12 @@
 }
 
 .home-page-title {
-  font-size: clamp(1.6rem, 4vw, 2.25rem);
-  line-height: 1.25;
+  font-size: clamp(1.75rem, 4.2vw, 3.15rem);
+  line-height: 1.22;
   letter-spacing: -0.02em;
+  max-width: 16em;
   margin: 0 0 0.5rem;
+  font-weight: 300;
 }
 
 .home-page-lead {
@@ -330,5 +338,22 @@
 
   .home-nav-end {
     justify-self: start;
+  }
+
+  .home-wheel {
+    right: -26%;
+    bottom: -20%;
+    width: min(92vw, 480px);
+    height: min(92vw, 480px);
+    opacity: 0.92;
+  }
+}
+
+@media (min-width: 1100px) {
+  .home-wheel {
+    right: -5%;
+    bottom: -8%;
+    width: 700px;
+    height: 700px;
   }
 }
