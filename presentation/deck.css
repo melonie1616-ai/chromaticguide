@@ -1,14 +1,17 @@
-/* Presentation deck — Chromatic Guide (projector-friendly) */
+/* Presentation deck — Chromatic Guide (mobile v3) */
 
 html {
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
 body.deck-body {
   overflow: hidden;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
   height: 100dvh;
   display: block;
@@ -16,6 +19,7 @@ body.deck-body {
   color: #1a1a1a;
   font-family: "Outfit", "Segoe UI", sans-serif;
   font-weight: 300;
+  margin: 0;
 }
 
 body.deck-body h1,
@@ -39,6 +43,7 @@ body.deck-body a:hover {
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 100%;
   height: calc(100vh - 52px);
   height: calc(100dvh - 52px);
   overflow: hidden;
@@ -49,6 +54,7 @@ body.deck-body a:hover {
   height: 100%;
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  max-width: none;
 }
 
 .deck-slide {
@@ -69,12 +75,30 @@ body.deck-body a:hover {
   max-width: 52rem;
   width: 100%;
   margin: 0;
-  padding-right: min(22vw, 240px);
+  padding-right: 0;
   box-sizing: border-box;
+}
+
+@media (min-width: 1280px) {
+  .deck-slide-inner {
+    padding-right: min(16vw, 180px);
+  }
 }
 
 .deck-slide-inner--wide {
   max-width: 56rem;
+}
+
+.deck-slide h1,
+.deck-slide h2,
+.deck-slide h3,
+.deck-sub,
+.deck-list,
+.deck-quote,
+.deck-meta {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .deck-slide h1 {
@@ -410,19 +434,16 @@ body.deck-body .home-wheel {
   height: min(55vw, 520px);
 }
 
-/* Small laptops — wheel padding was squeezing text off-screen */
-@media (max-width: 1100px) {
-  .deck-slide-inner {
+/* Small laptops and below — no wheel, no extra padding */
+@media (max-width: 1024px) {
+  .deck-slide-inner,
+  .deck-slide-inner--wide {
     padding-right: 0;
     max-width: 100%;
   }
 
   body.deck-body .home-wheel {
-    opacity: 0.3;
-    right: -28%;
-    bottom: -22%;
-    width: min(50vw, 400px);
-    height: min(50vw, 400px);
+    display: none !important;
   }
 }
 
@@ -507,14 +528,10 @@ body.deck-body .home-wheel {
     top: max(0.65rem, env(safe-area-inset-top));
     left: max(0.85rem, env(safe-area-inset-left));
     font-size: 0.62rem;
-  }
-
-  body.deck-body .home-wheel {
-    opacity: 0.2;
-    width: min(65vw, 320px);
-    height: min(65vw, 320px);
-    right: -35%;
-    bottom: -25%;
+    max-width: 45vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -552,7 +569,7 @@ body.deck-body .home-wheel {
     gap: 0.75rem;
   }
 
-  body.deck-body .home-wheel {
+  .deck-progress {
     display: none;
   }
 }
