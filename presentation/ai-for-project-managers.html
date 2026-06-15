@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/home.css?v=4" />
-  <link rel="stylesheet" href="deck.css?v=4" />
+  <link rel="stylesheet" href="deck.css?v=5" />
 </head>
 <body class="page-home deck-body">
   <a class="deck-back" href="../index.html">← Chromatic Guide</a>
@@ -28,7 +28,18 @@
             <p class="deck-meta">Melonie Poole · Chromatic Guide · PMI, July 2026</p>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-title.svg" alt="" width="280" height="200" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" aria-hidden="true">
+  <rect width="280" height="200" fill="none"/>
+  <rect x="20" y="30" width="240" height="8" rx="4" fill="#5c4d3c" opacity="0.9"/>
+  <rect x="20" y="46" width="240" height="8" rx="4" fill="#8b6914"/>
+  <rect x="20" y="62" width="240" height="8" rx="4" fill="#6b5344"/>
+  <rect x="20" y="78" width="240" height="8" rx="4" fill="#4a6670"/>
+  <rect x="20" y="94" width="240" height="8" rx="4" fill="#5a4a6e"/>
+  <rect x="20" y="110" width="240" height="8" rx="4" fill="#7a3b2e"/>
+  <circle cx="140" cy="155" r="28" fill="none" stroke="#d4cec4" stroke-width="2"/>
+  <path d="M128 155 L136 163 L154 145" fill="none" stroke="#7a3b2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="140" y="192" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#6b6560" font-style="italic">chromatic, not binary</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -59,7 +70,20 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-balance.svg" alt="" width="300" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" aria-hidden="true">
+  <!-- Human lead (larger) -->
+  <circle cx="95" cy="72" r="22" fill="#ebe6dc" stroke="#2a2724" stroke-width="2"/>
+  <path d="M95 94 L95 130 M75 108 L115 108 M80 155 L95 130 L110 155" fill="none" stroke="#2a2724" stroke-width="2" stroke-linecap="round"/>
+  <text x="95" y="178" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#2a2724">You lead</text>
+  <!-- AI second chair (smaller, beside) -->
+  <rect x="175" y="88" width="56" height="56" rx="8" fill="#f6f3ed" stroke="#4a6670" stroke-width="2"/>
+  <text x="203" y="112" text-anchor="middle" font-family="monospace" font-size="14" fill="#4a6670">AI</text>
+  <text x="203" y="128" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6b6560">second chair</text>
+  <!-- Connection -->
+  <path d="M118 115 Q148 100 172 115" fill="none" stroke="#d4cec4" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M140 55 L160 40 L180 55" fill="none" stroke="#7a3b2e" stroke-width="1.5"/>
+  <circle cx="160" cy="38" r="4" fill="#7a3b2e"/>
+</svg>
           </figure>
           <div class="deck-text">
             <h2>When AI runs everything, something else suffers</h2>
@@ -96,7 +120,25 @@
             </p>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-human.svg" alt="" width="320" height="200" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" aria-hidden="true">
+  <g transform="translate(20,20)">
+    <circle cx="40" cy="40" r="36" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+    <path d="M28 38 L36 46 L54 28" fill="none" stroke="#7a3b2e" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="40" y="95" text-anchor="middle" font-size="10" fill="#4a4540">Judgment</text>
+  </g>
+  <g transform="translate(120,20)">
+    <circle cx="40" cy="40" r="36" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+    <path d="M40 22 C28 32 28 48 40 58 C52 48 52 32 40 22Z" fill="none" stroke="#7a3b2e" stroke-width="2"/>
+    <text x="40" y="95" text-anchor="middle" font-size="10" fill="#4a4540">Empathy</text>
+  </g>
+  <g transform="translate(220,20)">
+    <circle cx="40" cy="40" r="36" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+    <path d="M22 52 L40 28 L58 52 M28 52 L52 52" fill="none" stroke="#7a3b2e" stroke-width="2" stroke-linecap="round"/>
+    <text x="40" y="95" text-anchor="middle" font-size="10" fill="#4a4540">Coaching</text>
+  </g>
+  <rect x="40" y="130" width="240" height="1" fill="#d4cec4"/>
+  <text x="160" y="165" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#6b6560" font-style="italic">AI assists  you decide</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -117,7 +159,11 @@
             <p class="deck-sub">Pick a few tools. Use them deliberately. Don&rsquo;t let the maze run you.</p>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-guardrails.svg" alt="" width="240" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" aria-hidden="true">
+  <path d="M120 20 L200 50 L200 110 C200 155 120 190 120 190 C120 190 40 155 40 110 L40 50 Z" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <path d="M85 108 L105 128 L155 78" fill="none" stroke="#7a3b2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="210" text-anchor="middle" font-size="10" fill="#6b6560">Approved � Review � Protect</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -125,7 +171,20 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-balance.svg" alt="" width="300" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" aria-hidden="true">
+  <!-- Human lead (larger) -->
+  <circle cx="95" cy="72" r="22" fill="#ebe6dc" stroke="#2a2724" stroke-width="2"/>
+  <path d="M95 94 L95 130 M75 108 L115 108 M80 155 L95 130 L110 155" fill="none" stroke="#2a2724" stroke-width="2" stroke-linecap="round"/>
+  <text x="95" y="178" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#2a2724">You lead</text>
+  <!-- AI second chair (smaller, beside) -->
+  <rect x="175" y="88" width="56" height="56" rx="8" fill="#f6f3ed" stroke="#4a6670" stroke-width="2"/>
+  <text x="203" y="112" text-anchor="middle" font-family="monospace" font-size="14" fill="#4a6670">AI</text>
+  <text x="203" y="128" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6b6560">second chair</text>
+  <!-- Connection -->
+  <path d="M118 115 Q148 100 172 115" fill="none" stroke="#d4cec4" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M140 55 L160 40 L180 55" fill="none" stroke="#7a3b2e" stroke-width="1.5"/>
+  <circle cx="160" cy="38" r="4" fill="#7a3b2e"/>
+</svg>
           </figure>
           <div class="deck-text">
             <h2>Skills, learning, and purpose</h2>
@@ -145,7 +204,25 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-in-the-loop.svg" alt="" width="260" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" aria-hidden="true">
+  <circle cx="130" cy="100" r="70" fill="none" stroke="#d4cec4" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="130" cy="100" r="44" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <circle cx="130" cy="82" r="12" fill="#ebe6dc" stroke="#2a2724" stroke-width="1.5"/>
+  <path d="M130 94 L130 118 M116 108 L144 108" stroke="#2a2724" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="130" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#2a2724">You</text>
+  <text x="130" y="140" text-anchor="middle" font-size="8" fill="#6b6560">review</text>
+  <!-- loop labels -->
+  <text x="130" y="28" text-anchor="middle" font-size="9" fill="#4a6670">Describe</text>
+  <text x="218" y="104" text-anchor="middle" font-size="9" fill="#4a6670">Adjust</text>
+  <text x="130" y="188" text-anchor="middle" font-size="9" fill="#4a6670">Share</text>
+  <text x="42" y="104" text-anchor="middle" font-size="9" fill="#4a6670">AI draft</text>
+  <path d="M130 38 L130 54 M196 100 L182 100 M130 162 L130 146 M64 100 L78 100" stroke="#7a3b2e" stroke-width="1.5" marker-end="url(#arr2-6)" opacity="0.6"/>
+  <defs>
+    <marker id="arr2-6" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L5,3 L0,6 Z" fill="#7a3b2e"/>
+    </marker>
+  </defs>
+</svg>
           </figure>
           <div class="deck-text">
             <h2>The balance: hybrid intelligence</h2>
@@ -208,7 +285,25 @@
             </div>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-woven.svg" alt="" width="340" height="260" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" aria-hidden="true">
+  <circle cx="170" cy="110" r="28" fill="#7a3b2e" opacity="0.15"/>
+  <circle cx="170" cy="110" r="14" fill="#7a3b2e"/>
+  <text x="170" y="114" text-anchor="middle" font-size="9" fill="#fff" font-weight="600">PM</text>
+  <!-- five spokes -->
+  <line x1="170" y1="110" x2="60" y2="45" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="280" y2="45" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="310" y2="130" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="250" y2="220" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="70" y2="210" stroke="#d4cec4" stroke-width="2"/>
+  <!-- nodes -->
+  <g><rect x="28" y="24" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#5c4d3c"/><text x="60" y="46" text-anchor="middle" font-size="9" fill="#4a4540">Planning</text></g>
+  <g><rect x="248" y="24" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#4a6670"/><text x="280" y="46" text-anchor="middle" font-size="9" fill="#4a4540">Delivery</text></g>
+  <g><rect x="278" y="112" width="58" height="36" rx="4" fill="#f6f3ed" stroke="#6b5344"/><text x="307" y="134" text-anchor="middle" font-size="9" fill="#4a4540">Reporting</text></g>
+  <g><rect x="218" y="204" width="72" height="36" rx="4" fill="#f6f3ed" stroke="#5a4a6e"/><text x="254" y="226" text-anchor="middle" font-size="9" fill="#4a4540">Comms</text></g>
+  <g><rect x="38" y="196" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#8b6914"/><text x="70" y="218" text-anchor="middle" font-size="9" fill="#4a4540">Creativity</text></g>
+  <path d="M55 200 Q170 170 285 50" fill="none" stroke="#7a3b2e" stroke-width="1.5" opacity="0.35" stroke-dasharray="6 4"/>
+  <text x="170" y="252" text-anchor="middle" font-size="10" fill="#6b6560">Woven in  not bolted on</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -237,7 +332,11 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-guardrails.svg" alt="" width="240" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" aria-hidden="true">
+  <path d="M120 20 L200 50 L200 110 C200 155 120 190 120 190 C120 190 40 155 40 110 L40 50 Z" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <path d="M85 108 L105 128 L155 78" fill="none" stroke="#7a3b2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="210" text-anchor="middle" font-size="10" fill="#6b6560">Approved � Review � Protect</text>
+</svg>
           </figure>
           <div class="deck-text deck-slide-inner--wide">
             <h2>Tools I use</h2>
@@ -296,7 +395,18 @@
             <p class="deck-meta">You&rsquo;re looking at it now. ← → to navigate.</p>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-title.svg" alt="" width="280" height="200" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" aria-hidden="true">
+  <rect width="280" height="200" fill="none"/>
+  <rect x="20" y="30" width="240" height="8" rx="4" fill="#5c4d3c" opacity="0.9"/>
+  <rect x="20" y="46" width="240" height="8" rx="4" fill="#8b6914"/>
+  <rect x="20" y="62" width="240" height="8" rx="4" fill="#6b5344"/>
+  <rect x="20" y="78" width="240" height="8" rx="4" fill="#4a6670"/>
+  <rect x="20" y="94" width="240" height="8" rx="4" fill="#5a4a6e"/>
+  <rect x="20" y="110" width="240" height="8" rx="4" fill="#7a3b2e"/>
+  <circle cx="140" cy="155" r="28" fill="none" stroke="#d4cec4" stroke-width="2"/>
+  <path d="M128 155 L136 163 L154 145" fill="none" stroke="#7a3b2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="140" y="192" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#6b6560" font-style="italic">chromatic, not binary</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -304,7 +414,29 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-meeting-notes.svg" alt="" width="340" height="170" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" aria-hidden="true">
+  <!-- messy notes -->
+  <rect x="16" y="20" width="100" height="110" rx="4" fill="#fff" stroke="#d4cec4"/>
+  <line x1="28" y1="38" x2="100" y2="38" stroke="#d4cec4" stroke-width="3"/>
+  <line x1="28" y1="52" x2="92" y2="52" stroke="#d4cec4"/>
+  <line x1="28" y1="66" x2="104" y2="66" stroke="#d4cec4"/>
+  <line x1="28" y1="80" x2="80" y2="80" stroke="#d4cec4"/>
+  <line x1="28" y1="94" x2="96" y2="94" stroke="#d4cec4"/>
+  <text x="66" y="148" text-anchor="middle" font-size="9" fill="#6b6560">Raw notes</text>
+  <path d="M128 75 L168 75" stroke="#7a3b2e" stroke-width="2"/>
+  <polygon points="168,70 178,75 168,80" fill="#7a3b2e"/>
+  <!-- structured table -->
+  <rect x="188" y="24" width="136" height="102" rx="4" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="1.5"/>
+  <rect x="188" y="24" width="136" height="22" fill="#7a3b2e" opacity="0.12"/>
+  <text x="200" y="38" font-size="8" font-weight="600" fill="#2a2724">Action</text>
+  <text x="268" y="38" font-size="8" font-weight="600" fill="#2a2724">Owner</text>
+  <line x1="188" y1="46" x2="324" y2="46" stroke="#d4cec4"/>
+  <line x1="256" y1="46" x2="256" y2="126" stroke="#d4cec4"/>
+  <line x1="188" y1="62" x2="324" y2="62" stroke="#d4cec4"/>
+  <line x1="188" y1="78" x2="324" y2="78" stroke="#d4cec4"/>
+  <line x1="188" y1="94" x2="324" y2="94" stroke="#d4cec4"/>
+  <text x="256" y="158" text-anchor="middle" font-size="9" fill="#6b6560">Owners + next steps</text>
+</svg>
           </figure>
           <div class="deck-text">
             <h2>2 — Team onboarding app</h2>
@@ -336,7 +468,32 @@
             </ul>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-usecase-consolidate.svg" alt="" width="360" height="160" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" aria-hidden="true">
+  <!-- 3 decks -->
+  <rect x="10" y="40" width="48" height="36" rx="3" fill="#f6f3ed" stroke="#d4cec4"/>
+  <rect x="18" y="32" width="48" height="36" rx="3" fill="#fff" stroke="#d4cec4"/>
+  <rect x="26" y="24" width="48" height="36" rx="3" fill="#fff" stroke="#6b6560"/>
+  <text x="50" y="46" text-anchor="middle" font-size="8" fill="#6b6560">PPT</text>
+  <text x="50" y="78" text-anchor="middle" font-size="9" fill="#4a4540">3 decks</text>
+  <!-- arrow -->
+  <path d="M90 52 L130 52" stroke="#7a3b2e" stroke-width="2" marker-end="url(#arr-11)"/>
+  <!-- AI -->
+  <rect x="138" y="28" width="64" height="48" rx="8" fill="#ebe6dc" stroke="#4a6670" stroke-width="2"/>
+  <text x="170" y="58" text-anchor="middle" font-family="monospace" font-size="13" fill="#4a6670">AI</text>
+  <path d="M210 52 L250 52" stroke="#7a3b2e" stroke-width="2"/>
+  <!-- Excel -->
+  <rect x="258" y="24" width="88" height="56" rx="4" fill="#fff" stroke="#059669" stroke-width="2"/>
+  <line x1="268" y1="40" x2="336" y2="40" stroke="#059669" stroke-width="1" opacity="0.5"/>
+  <line x1="268" y1="52" x2="336" y2="52" stroke="#d4cec4"/>
+  <line x1="268" y1="64" x2="336" y2="64" stroke="#d4cec4"/>
+  <text x="302" y="98" text-anchor="middle" font-size="9" fill="#4a4540">R � I � D table</text>
+  <text x="180" y="145" text-anchor="middle" font-size="10" fill="#7a3b2e" font-weight="600">~8 hours � minutes</text>
+  <defs>
+    <marker id="arr-11" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#7a3b2e"/>
+    </marker>
+  </defs>
+</svg>
           </figure>
         </div>
       </section>
@@ -364,7 +521,25 @@
             </ul>
           </div>
           <figure class="deck-visual">
-            <img src="images/illust-woven.svg" alt="" width="300" height="240" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" aria-hidden="true">
+  <circle cx="170" cy="110" r="28" fill="#7a3b2e" opacity="0.15"/>
+  <circle cx="170" cy="110" r="14" fill="#7a3b2e"/>
+  <text x="170" y="114" text-anchor="middle" font-size="9" fill="#fff" font-weight="600">PM</text>
+  <!-- five spokes -->
+  <line x1="170" y1="110" x2="60" y2="45" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="280" y2="45" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="310" y2="130" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="250" y2="220" stroke="#d4cec4" stroke-width="2"/>
+  <line x1="170" y1="110" x2="70" y2="210" stroke="#d4cec4" stroke-width="2"/>
+  <!-- nodes -->
+  <g><rect x="28" y="24" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#5c4d3c"/><text x="60" y="46" text-anchor="middle" font-size="9" fill="#4a4540">Planning</text></g>
+  <g><rect x="248" y="24" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#4a6670"/><text x="280" y="46" text-anchor="middle" font-size="9" fill="#4a4540">Delivery</text></g>
+  <g><rect x="278" y="112" width="58" height="36" rx="4" fill="#f6f3ed" stroke="#6b5344"/><text x="307" y="134" text-anchor="middle" font-size="9" fill="#4a4540">Reporting</text></g>
+  <g><rect x="218" y="204" width="72" height="36" rx="4" fill="#f6f3ed" stroke="#5a4a6e"/><text x="254" y="226" text-anchor="middle" font-size="9" fill="#4a4540">Comms</text></g>
+  <g><rect x="38" y="196" width="64" height="36" rx="4" fill="#f6f3ed" stroke="#8b6914"/><text x="70" y="218" text-anchor="middle" font-size="9" fill="#4a4540">Creativity</text></g>
+  <path d="M55 200 Q170 170 285 50" fill="none" stroke="#7a3b2e" stroke-width="1.5" opacity="0.35" stroke-dasharray="6 4"/>
+  <text x="170" y="252" text-anchor="middle" font-size="10" fill="#6b6560">Woven in  not bolted on</text>
+</svg>
           </figure>
         </div>
       </section>
@@ -372,7 +547,25 @@
       <section class="deck-slide">
         <div class="deck-slide-inner deck-split">
           <figure class="deck-visual">
-            <img src="images/illust-in-the-loop.svg" alt="" width="260" height="220" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" aria-hidden="true">
+  <circle cx="130" cy="100" r="70" fill="none" stroke="#d4cec4" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="130" cy="100" r="44" fill="#f6f3ed" stroke="#7a3b2e" stroke-width="2"/>
+  <circle cx="130" cy="82" r="12" fill="#ebe6dc" stroke="#2a2724" stroke-width="1.5"/>
+  <path d="M130 94 L130 118 M116 108 L144 108" stroke="#2a2724" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="130" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#2a2724">You</text>
+  <text x="130" y="140" text-anchor="middle" font-size="8" fill="#6b6560">review</text>
+  <!-- loop labels -->
+  <text x="130" y="28" text-anchor="middle" font-size="9" fill="#4a6670">Describe</text>
+  <text x="218" y="104" text-anchor="middle" font-size="9" fill="#4a6670">Adjust</text>
+  <text x="130" y="188" text-anchor="middle" font-size="9" fill="#4a6670">Share</text>
+  <text x="42" y="104" text-anchor="middle" font-size="9" fill="#4a6670">AI draft</text>
+  <path d="M130 38 L130 54 M196 100 L182 100 M130 162 L130 146 M64 100 L78 100" stroke="#7a3b2e" stroke-width="1.5" marker-end="url(#arr2-13)" opacity="0.6"/>
+  <defs>
+    <marker id="arr2-13" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L5,3 L0,6 Z" fill="#7a3b2e"/>
+    </marker>
+  </defs>
+</svg>
           </figure>
           <div class="deck-text">
             <h2>Three things to try this month</h2>

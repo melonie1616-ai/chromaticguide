@@ -305,7 +305,8 @@ body.deck-body a:hover {
   justify-content: center;
 }
 
-.deck-visual img {
+.deck-visual img,
+.deck-visual svg {
   display: block;
   width: 100%;
   height: auto;
@@ -471,8 +472,9 @@ body.deck-body .home-wheel {
     width: auto;
   }
 
-  .deck-visual img {
-    max-height: min(38vh, 280px);
+  .deck-visual img,
+  .deck-visual svg {
+    max-height: 280px;
   }
 }
 
@@ -496,7 +498,8 @@ body.deck-body .home-wheel {
     font-size: 0.88rem;
   }
 
-  .deck-visual img {
+  .deck-visual img,
+  .deck-visual svg {
     max-height: 120px;
   }
 
@@ -519,7 +522,8 @@ body.deck-body .home-wheel {
     margin-bottom: 0.5rem;
   }
 
-  .deck-visual img {
+  .deck-visual img,
+  .deck-visual svg {
     max-height: 160px;
     min-height: 80px;
   }
@@ -544,7 +548,8 @@ body.deck-body .home-wheel {
     font-size: 1.15rem;
   }
 
-  .deck-visual img {
+  .deck-visual img,
+  .deck-visual svg {
     max-height: 140px;
   }
 }
