@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>AI for Project Managers — Chromatic Guide</title>
   <meta name="description" content="AI as a tool — human judgment first, a practical journey, tools, builds, and resources for project managers." />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -412,6 +412,12 @@
         return viewport.clientWidth;
       }
 
+      function syncViewportHeight() {
+        var ui = document.querySelector(".deck-ui");
+        var uiH = ui ? ui.offsetHeight : 52;
+        viewport.style.height = "calc(100dvh - " + uiH + "px)";
+      }
+
       function buildProgress() {
         const bar = document.getElementById("progress");
         bar.innerHTML = "";
@@ -426,6 +432,7 @@
       }
 
       function syncLayout() {
+        syncViewportHeight();
         var w = slideWidth();
         slides.forEach(function (slide) {
           slide.style.flexBasis = w + "px";
@@ -460,6 +467,13 @@
       });
 
       window.addEventListener("resize", function () { goTo(current); });
+
+      if (typeof ResizeObserver !== "undefined") {
+        var ui = document.querySelector(".deck-ui");
+        if (ui) {
+          new ResizeObserver(function () { syncViewportHeight(); }).observe(ui);
+        }
+      }
 
       var touchStartX = 0;
       document.addEventListener("touchstart", function (e) { touchStartX = e.touches[0].clientX; });

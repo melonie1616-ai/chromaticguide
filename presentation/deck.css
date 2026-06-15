@@ -1,8 +1,16 @@
 /* Presentation deck — Chromatic Guide (projector-friendly) */
 
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body.deck-body {
   overflow: hidden;
+  overflow-x: hidden;
   height: 100vh;
+  height: 100dvh;
   display: block;
   background: #ffffff;
   color: #1a1a1a;
@@ -32,6 +40,7 @@ body.deck-body a:hover {
   z-index: 2;
   width: 100%;
   height: calc(100vh - 52px);
+  height: calc(100dvh - 52px);
   overflow: hidden;
 }
 
@@ -61,6 +70,7 @@ body.deck-body a:hover {
   width: 100%;
   margin: 0;
   padding-right: min(22vw, 240px);
+  box-sizing: border-box;
 }
 
 .deck-slide-inner--wide {
@@ -284,6 +294,13 @@ body.deck-body a:hover {
 
 .deck-split .deck-text {
   min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.deck-source a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .deck-back {
@@ -323,10 +340,11 @@ body.deck-body a:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem max(1rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
   background: rgba(255, 255, 255, 0.94);
   border-top: 1px solid #ececec;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .deck-ui button {
@@ -392,22 +410,169 @@ body.deck-body .home-wheel {
   height: min(55vw, 520px);
 }
 
+/* Small laptops — wheel padding was squeezing text off-screen */
+@media (max-width: 1100px) {
+  .deck-slide-inner {
+    padding-right: 0;
+    max-width: 100%;
+  }
+
+  body.deck-body .home-wheel {
+    opacity: 0.3;
+    right: -28%;
+    bottom: -22%;
+    width: min(50vw, 400px);
+    height: min(50vw, 400px);
+  }
+}
+
 @media (max-width: 900px) {
+  .deck-viewport {
+    height: calc(100dvh - 56px);
+  }
+
+  .deck-slide {
+    padding: 3.25rem 1.15rem 5.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
   .deck-split,
   .deck-split--visual-right,
   .deck-split--visual-left {
     grid-template-columns: 1fr;
     padding-right: 0;
+    max-width: 100%;
   }
 
-  .deck-slide-inner {
+  .deck-slide-inner,
+  .deck-slide-inner--wide {
+    max-width: 100%;
     padding-right: 0;
+  }
+
+  .deck-slide h1 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  .deck-slide h2 {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  .deck-sub {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    max-width: 100%;
+  }
+
+  .deck-list {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .deck-agenda li {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .deck-quote {
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+  }
+
+  .deck-meta {
+    font-size: clamp(0.85rem, 3.2vw, 1rem);
+  }
+
+  .deck-resource-list li {
+    font-size: clamp(0.95rem, 3.6vw, 1.1rem);
+  }
+
+  .deck-cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .deck-visual {
     order: -1;
-    max-width: 260px;
+    max-width: min(240px, 70vw);
     margin: 0 auto 0.75rem;
+  }
+
+  .deck-visual img {
+    max-height: min(28vh, 180px);
+  }
+
+  .deck-hint {
+    display: none;
+  }
+
+  .deck-back {
+    top: max(0.65rem, env(safe-area-inset-top));
+    left: max(0.85rem, env(safe-area-inset-left));
+    font-size: 0.62rem;
+  }
+
+  body.deck-body .home-wheel {
+    opacity: 0.2;
+    width: min(65vw, 320px);
+    height: min(65vw, 320px);
+    right: -35%;
+    bottom: -25%;
+  }
+}
+
+@media (max-width: 600px) {
+  .deck-viewport {
+    height: calc(100dvh - 64px);
+  }
+
+  .deck-ui {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+  }
+
+  .deck-progress {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .deck-ui button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.62rem;
+  }
+
+  .deck-stat {
+    display: block;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .deck-journey-step {
+    gap: 0.75rem;
+  }
+
+  body.deck-body .home-wheel {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .deck-slide {
+    padding: 3rem 1rem 5rem;
+  }
+
+  .deck-slide h1 {
+    font-size: 1.55rem;
+  }
+
+  .deck-slide h2 {
+    font-size: 1.35rem;
+  }
+
+  .deck-progress-dot {
+    width: 6px;
+    height: 6px;
   }
 }
 
