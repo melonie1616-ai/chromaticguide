@@ -1,0 +1,8 @@
+# Not needed for GitHub Pages
+*.pptx
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+presentation/images/*.png
+_check_*.py

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Before You Build, Write the Spec — Chromatic Guide</title>
+  <meta name="description" content="One-page AI project spec template — copy into Cursor or any builder. Problem, users, requirements, success criteria before you build." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/home.css?v=7" />
+</head>
+<body class="page-home">
+  <div class="home-shell">
+    <header class="home-header">
+      <a class="home-logo" href="../index.html">
+        <span class="home-logo-mark" aria-hidden="true"></span>
+        <span class="home-logo-text">Chromatic Guide</span>
+      </a>
+      <nav class="home-nav" aria-label="Main">
+        <a class="home-pill" href="index.html" aria-current="page">Resources</a>
+        <a class="home-pill" href="../about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="home-main">
+      <article class="home-content home-prose">
+        <p class="home-from-talk">From the PMI talk · The ATLAS lesson</p>
+        <h1 class="home-headline">Before You Build, Write the Spec</h1>
+
+        <p class="home-resource-note">
+          Fill this in <em>before</em> you open Cursor, Claude Code, or any builder. Copy it into a doc or paste it as the first message when you start building.
+        </p>
+
+        <div class="home-copy-bar">
+          <button type="button" class="home-copy-btn" id="copySpec" aria-describedby="copyStatus">
+            Copy template
+          </button>
+          <span class="home-copy-status" id="copyStatus" aria-live="polite"></span>
+        </div>
+
+        <label class="home-copy-label" for="specTemplate">Template — edit here, then copy</label>
+        <textarea class="home-copy-area" id="specTemplate" rows="28" spellcheck="true"># Spec — before I build
+
+## Problem statement
+What problem are you trying to solve?
+
+
+
+## Users
+Who will use this?
+
+
+
+## Requirements
+What must it do? (3–7 specifics)
+1.
+2.
+3.
+4.
+5.
+
+## Success criteria
+How will you know it worked?
+
+
+
+## Risks
+What could go wrong?
+
+
+
+## Assumptions
+What are you assuming?
+
+
+
+## AI assistance
+Where might AI help — and where must a human review?
+
+
+
+---
+Rules for the build: Follow this spec. Do not invent requirements I did not write. Flag anything unclear before coding. I will review before anyone else sees it.</textarea>
+
+        <blockquote class="home-takeaway-quote">
+          Specs first. Then build. Then review before anyone else sees it.
+        </blockquote>
+
+        <p class="home-thesis-line">Accelerate the work. Don&rsquo;t dilute the craft.</p>
+        <p><a href="index.html">← All take-home resources</a></p>
+      </article>
+    </main>
+
+    <div class="home-wheel" aria-hidden="true">
+      <img src="../assets/pantone-wheel.svg" width="800" height="800" alt="" />
+    </div>
+
+    <footer class="home-foot">
+      <span>Work, like music, lives in the nuance.</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("copySpec");
+      var area = document.getElementById("specTemplate");
+      var status = document.getElementById("copyStatus");
+      if (!btn || !area) return;
+
+      function setStatus(msg) {
+        status.textContent = msg;
+        window.setTimeout(function () {
+          if (status.textContent === msg) status.textContent = "";
+        }, 2000);
+      }
+
+      btn.addEventListener("click", function () {
+        var text = area.value;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () { setStatus("Copied — paste into Cursor"); },
+            function () { fallbackCopy(text); }
+          );
+        } else {
+          fallbackCopy(text);
+        }
+      });
+
+      function fallbackCopy(text) {
+        area.focus();
+        area.select();
+        try {
+          document.execCommand("copy");
+          setStatus("Copied — paste into Cursor");
+        } catch (e) {
+          setStatus("Select all in the box and copy (Ctrl+C)");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

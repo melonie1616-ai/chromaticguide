@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PMI 2026 — Presenter Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --soft: #777;
+      --border: #ececec;
+      --bg: #fff;
+      --panel: #fafafa;
+      --accent: #7a3b2e;
+      --demo: #f4f7f9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Outfit", "Segoe UI", sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 1.5rem 1.25rem 4rem;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 1.75rem; font-weight: 300; margin-bottom: 0.35rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .meta a { color: var(--text); }
+    .jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.65rem;
+      margin: 1rem 0 0.5rem;
+      font-size: 0.82rem;
+    }
+    .jump-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .jump-nav a:hover { color: var(--text); border-color: var(--text); }
+    .toolbar {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    .toolbar button {
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .toolbar button:hover { color: var(--text); border-color: #ccc; }
+    details.kit-section {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      background: var(--bg);
+    }
+    details.kit-section[open] { background: #fefefe; }
+    details.kit-section.demo-section summary { background: var(--demo); }
+    summary {
+      padding: 0.85rem 1.1rem;
+      font-weight: 400;
+      font-size: 1rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: var(--panel);
+      border-radius: 8px;
+    }
+    details[open] > summary { border-radius: 8px 8px 0 0; border-bottom: 1px solid var(--border); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      color: var(--soft);
+      flex-shrink: 0;
+    }
+    details[open] > summary::after { content: "−"; }
+    .section-body { padding: 1rem 1.15rem 1.25rem; color: #333; }
+    .section-body h3 {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin: 1.25rem 0 0.5rem;
+      font-weight: 400;
+    }
+    .section-body h3:first-child { margin-top: 0; }
+    .say, .open, .prep {
+      background: var(--panel);
+      border-left: 3px solid var(--border);
+      padding: 0.9rem 1.1rem;
+      margin: 0.65rem 0;
+      color: #333;
+    }
+    .prep { background: #fff8f0; border-left-color: #8b6914; }
+    .dont {
+      background: #faf6f5;
+      border-left: 3px solid var(--accent);
+      padding: 0.9rem 1.1rem;
+      margin: 0.65rem 0;
+      color: #333;
+    }
+    .dont p { margin-bottom: 0.45rem; }
+    .dont p:last-child { margin-bottom: 0; }
+    .say p, .open p { margin-bottom: 0.55rem; }
+    .say p:last-child, .open p:last-child { margin-bottom: 0; }
+    .beat {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0.85rem 0 0.35rem;
+    }
+    .beat:first-child { margin-top: 0; }
+    .slide-ref { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.35rem; }
+    .note-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      font-weight: 400;
+      margin: 0.85rem 0 0.3rem;
+    }
+    .note-label:first-child { margin-top: 0; }
+    .ppt-hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: #f4f7f9;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .time { font-weight: 500; color: var(--text); }
+    ul, ol { margin: 0.5rem 0 0.75rem 1.2rem; color: var(--muted); }
+    li { margin-bottom: 0.3rem; }
+    strong { font-weight: 500; color: var(--text); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      font-weight: 400;
+    }
+    td { color: var(--muted); }
+    td:first-child { white-space: nowrap; color: var(--text); font-weight: 400; width: 5.5rem; }
+    tr.demo td { background: var(--demo); }
+    code {
+      font-size: 0.88em;
+      background: #f0f0f0;
+      padding: 0.12em 0.35em;
+      border-radius: 3px;
+      word-break: break-word;
+    }
+    .chat-box {
+      width: 100%;
+      min-height: 14rem;
+      font-family: inherit;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      resize: vertical;
+      color: var(--text);
+      background: #fff;
+    }
+    .copy-hint { font-size: 0.82rem; color: var(--soft); margin-top: 0.5rem; }
+    details.slide-note {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    details.slide-note summary {
+      padding: 0.6rem 0.85rem;
+      font-size: 0.92rem;
+      background: #fcfcfc;
+    }
+    details.slide-note .say { margin: 0; border-left: 0; border-top: 1px solid var(--border); border-radius: 0 0 6px 6px; }
+    dl.qa dt { font-weight: 500; margin-top: 0.75rem; color: var(--text); }
+    dl.qa dd { color: var(--muted); margin: 0.2rem 0 0 0; }
+    .quote {
+      border-left: 3px solid #d8d8d8;
+      padding-left: 0.85rem;
+      margin: 0.65rem 0;
+      color: #444;
+      font-size: 0.95rem;
+    }
+    kbd {
+      font-family: inherit;
+      font-size: 0.85em;
+      padding: 0.1em 0.35em;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--panel);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PMI 2026 — Presenter Kit</h1>
+    <p class="meta">
+      <strong>Partnering with AI</strong> · Structure · stories · standards · Don&rsquo;t dilute the craft ·
+      12 slides + ~15 min live Cursor ·
+      <a href="presentation/ai-for-project-managers.html">Open deck</a>
+    </p>
+    <nav class="jump-nav" aria-label="Sections">
+      <a href="#a-plus">A+ rehearsal</a>
+      <a href="#run-of-show">Run of show</a>
+      <a href="#speaker-notes">Speaker notes</a>
+      <a href="#atlas">ATLAS</a>
+      <a href="#cursor-demo">Cursor demo</a>
+      <a href="#zoom-chat">Zoom chat</a>
+      <a href="#story-guide">Q&amp;A stories</a>
+    </nav>
+    <div class="toolbar">
+      <button type="button" id="expandAll">Expand all</button>
+      <button type="button" id="collapseAll">Collapse all</button>
+    </div>
+  </header>
+
+  <!-- A+ REHEARSAL -->
+  <details class="kit-section" id="a-plus" open>
+    <summary>A+ rehearsal checklist</summary>
+    <div class="section-body">
+      <p class="slide-ref">Three memory beats only: Friday→Monday · the cut · one Monday move. If the cut doesn&rsquo;t land, the talk caps at B−.</p>
+      <ul>
+        <li>Memorize the 60-second open (below)</li>
+        <li>Run the Cursor path <strong>3×</strong>; write the exact reject line you will say</li>
+        <li>Time slides 2–9 once with a stopwatch (target ~12 min); slides <strong>5 ≤ 75s</strong>, <strong>6 ≤ 45s</strong></li>
+        <li><strong>Auto-build slides</strong> (PowerPoint): 4, 5, 6, 8, 10 — beats fade in automatically (After Previous); your click / → goes to the <em>next slide</em>. Speak over the cascade; don&rsquo;t wait for each click</li>
+        <li>Practice Zoom share switch: deck → Cursor → deck</li>
+        <li>At slide 11, pause for the one-action commit <em>before</em> chat paste / Q&amp;A</li>
+        <li>Say the craft line hard three times max: open · after the cut · close — don&rsquo;t dilute it mid-talk</li>
+        <li>If something feels thin, cut words from slides 5–6 — do <strong>not</strong> add slides</li>
+      </ul>
+      <p class="ppt-hint"><strong>Success test:</strong> Three beats in under 20 seconds · cut on camera without apology · slide 11 forces a choice · 5–6 under ~2 min combined. Rehearse builds once so Space doesn&rsquo;t accidentally skip past a reveal.</p>
+    </div>
+  </details>
+
+  <!-- RUN OF SHOW -->
+  <details class="kit-section" id="run-of-show" open>
+    <summary>Run of show (~50 min + Q&amp;A)</summary>
+    <div class="section-body">
+      <h3>60-second open (memorize)</h3>
+      <div class="open">
+        <p>Some of you saw me last year on productivity prompts. That still works. Tonight is year two — and the story underneath it is ATLAS.</p>
+        <p>I lead the VMO for our Corporate Data and AI Office — how we manage, track, and report. I help run AI Superworkers (1000+). We built ATLAS so Monday leadership status is live data — not a Friday-night PowerPoint rebuild. That journey — why we built it, how I used AI to build it, how we run on it — is tonight&rsquo;s through-line.</p>
+        <p><strong>I lead the structure, the stories, and the standards. AI helps me get it done.</strong> And: <strong>Accelerate the work. Don&rsquo;t dilute the craft.</strong></p>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Slide / segment</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0:00</td><td>1 · Title + agenda</td><td>Dual tagline (hard hit #1)</td></tr>
+          <tr><td>1:00</td><td>2 · Role</td><td>VMO · Superworkers · ATLAS foreshadow (Friday→Monday)</td></tr>
+          <tr><td>2:30</td><td>3 · AI &amp; PMs</td><td>PPT parallel = same problem that led to ATLAS</td></tr>
+          <tr><td>4:00</td><td>4 · You still make the call</td><td><strong>Auto-build</strong> · pillars → 86% → source</td></tr>
+          <tr><td>5:30</td><td>5 · Working loop</td><td><strong>Auto-build</strong> · ≤75s · steps cascade</td></tr>
+          <tr><td>6:45</td><td>6 · Tools</td><td><strong>Auto-build</strong> · ≤45s · columns cascade</td></tr>
+          <tr><td>7:30</td><td>7 · Pulling the story</td><td>Bridge: &ldquo;here&rsquo;s how that showed up — ATLAS&rdquo;</td></tr>
+          <tr><td>9:00</td><td>8 · ATLAS</td><td><strong>Auto-build</strong> · pain → job → how → punchline</td></tr>
+          <tr><td>11:00</td><td>9 · Trust / screenshot</td><td>No build — land whole visual</td></tr>
+          <tr class="demo"><td>12:00</td><td>10 · Cursor bridge</td><td><strong>Auto-build</strong> · sources → ask → cut → craft</td></tr>
+          <tr class="demo"><td>12:00–27:00</td><td>Live Cursor</td><td><strong>Must land:</strong> cut wrong output out loud</td></tr>
+          <tr><td>27:00</td><td>11 · A few things to try</td><td>Capstone line · pick one Monday move</td></tr>
+          <tr><td>29:00</td><td>12 · Resources</td><td>Paste Zoom chat</td></tr>
+          <tr><td>30:00</td><td>Q&amp;A</td><td>Story guide</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Zoom checklist</h3>
+      <ul>
+        <li>Deck through slide 9, then switch share to Cursor at slide 10</li>
+        <li>Re-share deck for slides 11–12 (close + resources)</li>
+        <li>Increase Cursor font size before session</li>
+        <li>Saved output fallback ready — practice the cut on it so it looks intentional</li>
+        <li>Slide 11: one-action pause, then slide 12 chat paste</li>
+        <li>12 slides — hard refresh deck (<kbd>Ctrl+Shift+R</kbd>) after updates</li>
+      </ul>
+
+      <h3>If you only have 45 minutes</h3>
+      <ul>
+        <li>Compress slides 2–9 to ~12 min total (cut from 5–6 first)</li>
+        <li>Cursor demo 10 min (show saved output if live fails — still do the cut)</li>
+        <li>Close + Q&amp;A from 38:00</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- SPEAKER NOTES -->
+  <details class="kit-section" id="speaker-notes" open>
+    <summary>Speaker notes (all 12 slides) — PowerPoint-ready</summary>
+    <div class="section-body">
+      <p class="ppt-hint"><strong>For PowerPoint:</strong> Each note below is one Notes pane. Timings assume ~12 min talk before the live Cursor demo.</p>
+      <p class="slide-ref">Spine: ATLAS journey (why / how / proof). Thesis hard hits: open (1) · after cut (10) · close (11). Compress 5–6. Don&rsquo;t grow the ATLAS product tour.</p>
+
+      <details class="slide-note" open>
+        <summary>Slide 1 · Title + agenda · ~1 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Some of you saw me last year on productivity prompts. That still works. Tonight is year two — and the story underneath it is ATLAS.</p>
+          <p><strong>I lead the structure, the stories, and the standards. AI helps me get it done.</strong> And: <strong>Accelerate the work. Don&rsquo;t dilute the craft.</strong></p>
+          <p class="note-label">Transition</p>
+          <p>Quick intro on what I do — Friday→Monday foreshadow.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 2 · Role · ~1.5 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>I lead the VMO for our Corporate Data and AI Office — manage, track, and report at a data center company.</p>
+          <p>I help run AI Superworkers — 1000+ people. Demos, surveys, lots of &ldquo;here&rsquo;s where I got stuck.&rdquo;</p>
+          <p>We built ATLAS so Monday leadership status is live data — not a Friday-night PowerPoint rebuild. I&rsquo;ll show that later — it&rsquo;s the through-line tonight.</p>
+          <p>Last year was prompts that saved hours. This year I also pull stories across sources — and build when nothing fits. ATLAS is that story. I do this for a living. Tonight I&rsquo;ll share what&rsquo;s been useful.</p>
+          <p class="note-label">Transition</p>
+          <p>Sixty seconds on where AI is for PMs.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 3 · AI &amp; PMs · ~1.5 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Keep this short. AI can draft status, pull notes together, even help you build.</p>
+          <p>Easy to produce a lot of updates. That doesn&rsquo;t mean they&rsquo;re clear or accurate.</p>
+          <p>Deloitte: about <strong>74%</strong> plan to use agents; only about <strong>1 in 5</strong> have solid governance. Stick to approved tools; read before you send.</p>
+          <p>We already lived this with PowerPoint and spreadsheets — more slides didn&rsquo;t mean more clarity. Same risk, faster. That&rsquo;s the craft problem that led us to ATLAS. (Save the craft tagline for the demo cut and close.)</p>
+          <p class="note-label">Transition</p>
+          <p>What I still do myself.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 4 · You still make the call · ~1.5 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Quality and accuracy — I read it before it goes out. Decisions — AI can suggest; I decide. People — hard conversations stay human.</p>
+          <p>Microsoft: <strong>86%</strong> of AI users treat AI as a starting point — not the final answer. If nobody in the room can explain the update, we have a trust problem. That&rsquo;s why a Monday pulse only works if people can trust the numbers — which is why ATLAS has an audit trail and review built in.</p>
+          <p class="note-label">Transition</p>
+          <p>How I try things without making a mess — quick.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 5 · Working loop · ≤ 60–75 sec</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Hard cap. Try it on real work. Fix it or drop it. Pick the right tool. If I build — write the spec first, then review. That&rsquo;s how ATLAS got built.</p>
+          <p>Start on real work. Fix it or stop — don&rsquo;t send a draft you haven&rsquo;t read.</p>
+          <p class="note-label">Transition</p>
+          <p>Tools — forty-five seconds max.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 6 · Tools · ≤ 45 sec</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>I don&rsquo;t use one tool for everything. Copilot for daily work — watch for confident mistakes in email. Chat tools to think or pull a story. Cursor when I build — that&rsquo;s the ATLAS path: write what I need first, then review hard.</p>
+          <p>Use what your org allows. Same quality bar on every tool.</p>
+          <p class="note-label">Transition</p>
+          <p>Where AI helps me most.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 7 · Pulling the story · ~1.5 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Too many notes, decks, threads. AI gives me a draft. I decide what leadership hears. Same job ATLAS does at portfolio scale — commitments, health, what&rsquo;s in the way.</p>
+          <p>Starting out: meeting notes → action table. Check every row before you send it. Here&rsquo;s how that showed up for our VMO — ATLAS.</p>
+          <p class="note-label">Transition</p>
+          <p>Into the capstone.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 8 · ATLAS · ~2 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>This is the capstone of tonight&rsquo;s story — why we built it, how AI helped, how we run on it. Stay in the pain; don&rsquo;t product-tour.</p>
+          <p><strong>What stopped:</strong> Friday-night PowerPoint rebuilds for Monday leadership.</p>
+          <p>ADO/Jira tracks the work. ATLAS answers what leadership asks — what we committed to, are we on track, what&rsquo;s in the way.</p>
+          <p>Build detail ≤ ~90 seconds: specs first, tested as we went, Azure + SSO. Monday pulse is live data now. AI helped me build faster. The specs are why people trust it.</p>
+          <p class="note-label">Optional near-miss (20–30s — your real story only)</p>
+          <p>One wrong or fluffy status line you almost shipped — what you caught and why. No invented KPIs.</p>
+          <p class="note-label">Transition</p>
+          <p>What that looks like on the screen.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 9 · Trust / screenshot · ~1.5 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Point at the dashboard: <strong>This replaced Friday.</strong> Audit trail, live status, built a little at a time with review. Don&rsquo;t tour the product. Capstone proof — then the craft live.</p>
+          <p>Next — Cursor. Same review discipline that shipped ATLAS. Watch for the moment I cut something that&rsquo;s wrong.</p>
+          <p class="note-label">Zoom</p>
+          <p>Stop deck share → share Cursor.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 10 · Cursor bridge · then ~15 min demo</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Not every Cursor button. Sources in a folder. Ask it to pull the story together. <strong>Cut what&rsquo;s wrong out loud</strong> — then keep going until I&rsquo;d put my name on it. Same edit discipline that shipped ATLAS.</p>
+          <p><strong>The craft moment isn&rsquo;t the prompt. It&rsquo;s the edit.</strong></p>
+          <p class="note-label">Demo climax (must land)</p>
+          <p>When output arrives: find one wrong or fluffy line, delete it on screen, say why (&ldquo;That&rsquo;s not true / that&rsquo;s not how we talk / leadership doesn&rsquo;t need this&rdquo;). That cut is the whole thesis — and how ATLAS stayed trustworthy.</p>
+          <p>If live fails: open saved output and do the same cut.</p>
+          <p class="note-label">Transition</p>
+          <p>Re-share deck — a few things to try.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 11 · A few things to try · ~2 min</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>ATLAS is my capstone for partnering with AI — not a product pitch for you to copy. Your Monday move is smaller and yours.</p>
+          <p><strong>Before questions — pick one this-week action.</strong> Write it down or drop it in chat. Pause long enough for them to choose.</p>
+          <p>Four keepers + this week / this month panels. Close on the craft line only: <strong>Accelerate the work. Don&rsquo;t dilute the craft.</strong> (Identity already landed at open.)</p>
+          <p class="note-label">Transition</p>
+          <p>Resources in chat — then questions.</p>
+        </div>
+      </details>
+
+      <details class="slide-note">
+        <summary>Slide 12 · Resources · ~1 min + Q&amp;A</summary>
+        <div class="say">
+          <p class="note-label">Say</p>
+          <p>Four take-homes on the slide — no URLs to type. Point at the QR: everything lives at chromaticguide.com/resources.</p>
+          <p><strong>AI can accelerate the work. You still own the judgment, the story, and the standard.</strong></p>
+          <p>I&rsquo;ll stay for questions. Thank you.</p>
+          <p class="note-label">Zoom</p>
+          <p>Paste chat message now (links for people who prefer not to scan).</p>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- ATLAS -->
+  <details class="kit-section" id="atlas" open>
+    <summary>How to present ATLAS (slides 8–9, ~3–4 min)</summary>
+    <div class="section-body">
+      <p class="slide-ref">Capstone peak — screenshot only (no live ATLAS). Stay in the pain. Build detail ≤ ~90 seconds. Don&rsquo;t grow this into a product tour.</p>
+
+      <h3>Job of this segment</h3>
+      <p>Prove the through-line: <strong>why</strong> (Friday pain) → <strong>how</strong> (spec + AI in Cursor) → <strong>proof</strong> (live Monday pulse). You are not pitching ATLAS for them to buy or rebuild.</p>
+
+      <h3>Pacing map</h3>
+      <table>
+        <thead><tr><th>Time</th><th>Beat</th><th>Do this</th></tr></thead>
+        <tbody>
+          <tr><td>0:00–0:40</td><td>Pain</td><td>Friday-night rebuild — one vivid picture, no feature list</td></tr>
+          <tr><td>0:40–1:20</td><td>Job</td><td>ADO = work; ATLAS = leadership questions</td></tr>
+          <tr><td>1:20–2:30</td><td>Build</td><td>≤90s: specs → Cursor → Azure/SSO → trust</td></tr>
+          <tr><td>2:30–3:00</td><td>Near-miss</td><td>Optional; skip if you don&rsquo;t have a real one</td></tr>
+          <tr><td>3:00–4:00</td><td>Proof</td><td>Slide 9: point, name 2–3 zones, bridge to Cursor</td></tr>
+        </tbody>
+      </table>
+
+      <h3>1 · Slide 8 — word-for-word track</h3>
+      <div class="say">
+        <p class="beat">Open the capstone</p>
+        <p>&ldquo;This is the capstone of tonight&rsquo;s story — why we built it, how AI helped, how we run on it.&rdquo;</p>
+        <p class="beat">Pain (linger here)</p>
+        <p>&ldquo;What stopped for me: Friday-night PowerPoint rebuilds for Monday leadership. Pull from ADO. Reformat. Chase owners. Hope the numbers still match by Monday morning.&rdquo;</p>
+        <p class="beat">Different job</p>
+        <p>&ldquo;ADO and Jira track the work. That&rsquo;s execution. Leadership asks different questions: what did we commit to, are we on track, what&rsquo;s in the way? ATLAS answers those — commitments, health, and status in one place.&rdquo;</p>
+        <p class="beat">Model (one breath)</p>
+        <p>&ldquo;Simple model: Portfolio Area → Project → Milestone. We link out to ADO — we don&rsquo;t duplicate execution.&rdquo;</p>
+        <p class="beat">Build (hard cap ~90s — practice with a timer)</p>
+        <p>&ldquo;How we built it: we wrote the specs first — what leadership needs to see, what fields are governed, what gets audited. Then we built in Cursor, tested as we went, hosted on company Azure with SSO. AI helped me go faster. The specs are why people trust it. Monday pulse is live data now — not a Friday rebuild.&rdquo;</p>
+        <p class="beat">Optional near-miss (only if true)</p>
+        <p>&ldquo;One line we almost shipped that was wrong / fluffy — I caught it because we review before it hits leadership.&rdquo; Fill your real sentence here: _______________________________</p>
+      </div>
+
+      <div class="dont">
+        <p><strong>Don&rsquo;t</strong></p>
+        <p>Tour menus, name every module, invent KPIs, or say &ldquo;you should build ATLAS.&rdquo;</p>
+        <p>Spend &gt;90s on Azure/SSO/tech — one sentence each is enough.</p>
+        <p>Re-hit the craft tagline here — save it for the Cursor cut and close.</p>
+      </div>
+
+      <h3>2 · Slide 9 — what to point at</h3>
+      <div class="say">
+        <p class="beat">Land the screenshot</p>
+        <p>&ldquo;This replaced Friday.&rdquo; Pause. Let them look.</p>
+        <p class="beat">Name only 2–3 things (pick what&rsquo;s visible)</p>
+        <p>Example: &ldquo;Program snapshot… deliverables by month… blocked or past due — live, not rebuilt Friday night.&rdquo;</p>
+        <p class="beat">Trust (one breath)</p>
+        <p>&ldquo;Audit trail and governed fields — so if somebody asks where a number came from, we can answer.&rdquo;</p>
+        <p class="beat">Bridge to Cursor (memorize)</p>
+        <p>&ldquo;AI sped the build. I still hold trust in the room. Next I&rsquo;ll show that same review discipline live in Cursor — watch for the moment I cut something that&rsquo;s wrong.&rdquo;</p>
+      </div>
+
+      <div class="prep">
+        <strong>Stagecraft</strong>
+        <ul>
+          <li>Stay on slide 8 until the pain lands — don&rsquo;t rush to the screenshot</li>
+          <li>On slide 9, use the mouse as a pointer; don&rsquo;t scroll or click around</li>
+          <li>If Q&amp;A starts early: &ldquo;Hold that — I&rsquo;ll take it after the Cursor cut&rdquo; (unless it&rsquo;s a 10-second clarify)</li>
+          <li>Zoom: screenshot only — no live ATLAS login</li>
+        </ul>
+      </div>
+
+      <h3>If someone asks…</h3>
+      <dl class="qa">
+        <dt>Why not just ADO?</dt>
+        <dd>ADO = execution. ATLAS = commitments, health, narrative for leadership. Different job.</dd>
+        <dt>Did AI build the whole thing?</dt>
+        <dd>AI helped us build faster in Cursor. Structure, governance, what leadership sees — deliberate product design.</dd>
+        <dt>Can we get ATLAS / is it for sale?</dt>
+        <dd>It&rsquo;s our internal instrument. Steal the pattern: pain → written spec → build with review → trust the numbers.</dd>
+        <dt>Do I need to be a developer?</dt>
+        <dd>No. Start with Copilot. Cursor when off-the-shelf doesn&rsquo;t fit — still start with a written spec.</dd>
+        <dt>Cursor vs Claude Code?</dt>
+        <dd>Similar goal — project-wide AI assistance. Cursor = visual editor; Claude Code = terminal agent. Same rule either way.</dd>
+      </dl>
+    </div>
+  </details>
+
+  <!-- CURSOR DEMO -->
+  <details class="kit-section demo-section" id="cursor-demo" open>
+    <summary>How to talk about Cursor + live demo (~15 min)</summary>
+    <div class="section-body">
+      <p class="slide-ref">Two jobs: (1) name Cursor early without demoing it; (2) live craft climax after slide 10. Arc: sources → draft → <strong>cut</strong> → own → return. Same discipline that shipped ATLAS.</p>
+
+      <h3>How to talk about Cursor before the demo</h3>
+      <div class="say">
+        <p class="beat">Slide 6 (≤45s) — name it, don&rsquo;t teach it</p>
+        <p>&ldquo;Copilot for daily work. Chat tools when I&rsquo;m thinking something through. Cursor when I build — that&rsquo;s the ATLAS path: write what I need first, then review hard.&rdquo;</p>
+        <p>Then move on. No feature tour, no &ldquo;here&rsquo;s Composer vs Chat.&rdquo;</p>
+        <p class="beat">What Cursor is (if someone looks confused — 15s max)</p>
+        <p>&ldquo;Think of it as an AI-assisted editor that can see a whole project folder — notes, specs, code — not just one chat window. I use it when I&rsquo;m building something, not for every email.&rdquo;</p>
+        <p class="beat">Slide 10 bridge (before you leave the deck)</p>
+        <p>&ldquo;Not every Cursor button. Sources in a folder. Ask it to pull the story together. Cut what&rsquo;s wrong out loud — same edit discipline that shipped ATLAS. <strong>The craft moment isn&rsquo;t the prompt. It&rsquo;s the edit.</strong>&rdquo;</p>
+      </div>
+
+      <div class="dont">
+        <p><strong>Don&rsquo;t say</strong></p>
+        <p>&ldquo;Cursor writes my slides for me&rdquo; / &ldquo;I just accept everything&rdquo; / a long comparison of AI IDEs.</p>
+        <p>Don&rsquo;t apologize for AI being wrong — treat the cut as the point.</p>
+      </div>
+
+      <div class="prep">
+        <strong>Non-negotiable checklist</strong>
+        <ul>
+          <li>Demo folder ready (or <code>chromaticguide/presentation/</code>)</li>
+          <li>3–4 source files: meeting transcript, old outline, messy bullet list</li>
+          <li>Close sensitive tabs; increase font size for Zoom</li>
+          <li>Rehearse the full path <strong>3×</strong> — target 12–14 min live</li>
+          <li><strong>Write your reject line now:</strong> ________________________________</li>
+          <li>Saved wrong/fluffy output open and ready — fallback cut must look intentional, not apologetic</li>
+        </ul>
+      </div>
+
+      <h3>1 · Frame (<span class="time">0:00–1:30</span>)</h3>
+      <div class="say">
+        <p>&ldquo;I&rsquo;m not going to tour every Cursor button. You&rsquo;ll see how I work: sources in a folder, ask it to pull the story together, then cut what&rsquo;s wrong out loud — same edit discipline that shipped ATLAS.&rdquo;</p>
+        <p><strong>The craft moment isn&rsquo;t the prompt. It&rsquo;s the edit.</strong> (Hard hit #2 — after open.)</p>
+      </div>
+
+      <h3>2 · Show folder (<span class="time">1:30–3:00</span>)</h3>
+      <div class="say">
+        <p class="beat">What to show</p>
+        <p>File tree — notes, old deck outline, transcript. Enlarge the sidebar so Zoom can see filenames.</p>
+        <p class="beat">What to say</p>
+        <p>&ldquo;PM life: fragments everywhere. I&rsquo;m giving it context first — not &lsquo;write my slides.&rsquo;&rdquo;</p>
+        <p>&ldquo;This is the same idea as ATLAS: start from the real inputs, then decide what leadership hears.&rdquo;</p>
+      </div>
+
+      <h3>3 · Ask — first prompt (<span class="time">3:00–6:00</span>)</h3>
+      <div class="say">
+        <p>Paste or type slowly enough that people can read:</p>
+        <p><code>Read these files. I am presenting to PMI project managers. What is the through-line? Propose a 5-part story arc. Outline only — no slides yet.</code></p>
+        <p class="beat">Narrate while it runs (fill silence)</p>
+        <p>&ldquo;I asked for an outline, not a finished deck — so I stay in control of the story.&rdquo;</p>
+        <p>&ldquo;I&rsquo;m watching for: wrong claims, jargon I wouldn&rsquo;t say, fluff leadership doesn&rsquo;t need.&rdquo;</p>
+        <p>When output appears: scroll once, highlight with the cursor, stay quiet 2–3 seconds so they can read.</p>
+      </div>
+
+      <h3>4 · Climax — cut what&rsquo;s wrong (<span class="time">6:00–9:00</span>) — MUST LAND</h3>
+      <div class="say">
+        <p><strong>Non-negotiable:</strong> Find one wrong, fluffy, or overconfident line. Delete it on screen. Say your scripted reject out loud — pick one and stick to it:</p>
+        <ul>
+          <li>&ldquo;That&rsquo;s not true.&rdquo;</li>
+          <li>&ldquo;That&rsquo;s not how we talk.&rdquo;</li>
+          <li>&ldquo;Leadership doesn&rsquo;t need this.&rdquo;</li>
+        </ul>
+        <p class="beat">After the cut — land the thesis</p>
+        <p>&ldquo;That cut is the whole point. Same discipline that kept ATLAS trustworthy — I don&rsquo;t ship what I can&rsquo;t stand behind.&rdquo;</p>
+        <p>&ldquo;Keep going until I&rsquo;d put my name on it.&rdquo;</p>
+        <p>Do not skip this for a prettier generate-only demo.</p>
+      </div>
+
+      <h3>5 · Build — one artifact (<span class="time">9:00–12:30</span>)</h3>
+      <div class="say">
+        <p>Pick <strong>one</strong> (don&rsquo;t do all three live):</p>
+        <ul>
+          <li><strong>A:</strong> Meeting notes → action table HTML (most PM-friendly)</li>
+          <li><strong>B:</strong> Draft speaker notes — spoken, not corporate — then cut again</li>
+          <li><strong>C:</strong> Status email draft from bullets (fast if time is short)</li>
+        </ul>
+        <p><code>From meeting-notes.txt, create HTML table: Action | Owner | Due | Status. Flag ambiguities at top for me to resolve.</code></p>
+        <p class="beat">While it builds</p>
+        <p>&ldquo;Notice I asked it to flag what it&rsquo;s unsure about — that&rsquo;s judgment staying with me.&rdquo;</p>
+        <p>Quick second cut if something is off — shorter than the climax cut.</p>
+      </div>
+
+      <h3>6 · Wrap (<span class="time">12:30–15:00</span>)</h3>
+      <div class="say">
+        <p>&ldquo;Recap: sources → draft → cut what&rsquo;s wrong → own it → share.&rdquo;</p>
+        <p>&ldquo;If you&rsquo;re starting out: Copilot, meeting notes → action table — same discipline, smaller step. Cursor when nothing off-the-shelf fits — start with a written spec, like we did for ATLAS.&rdquo;</p>
+        <p>&ldquo;I&rsquo;m switching back to the deck — pick one thing for this week.&rdquo;</p>
+      </div>
+
+      <h3>Voice tips while Cursor is thinking</h3>
+      <ul>
+        <li>Never go silent &gt;8 seconds — narrate what you&rsquo;re looking for</li>
+        <li>Prefer &ldquo;I&rsquo;m checking…&rdquo; over &ldquo;wow, look how fast&rdquo;</li>
+        <li>If output is good: still find something small to tighten — shows standards, not magic</li>
+        <li>If output is bad: smile and cut — that&rsquo;s the demo working</li>
+      </ul>
+
+      <h3>If something breaks</h3>
+      <ul>
+        <li>Open saved output immediately and do the same cut out loud — no apology tour</li>
+        <li>&ldquo;Even the demo needs a PM — that cut is the craft.&rdquo;</li>
+        <li>Share fail: stop Cursor share → re-share window → continue from saved file</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- ZOOM CHAT -->
+  <details class="kit-section" id="zoom-chat">
+    <summary>Zoom chat message (copy at slide 12)</summary>
+    <div class="section-body">
+      <textarea class="chat-box" id="chatMessage" readonly>Thanks for joining! Take-home from tonight:
+
+All four resources (scan or click):
+https://chromaticguide.com/resources/
+
+• PM AI Prompt Library
+https://chromaticguide.com/resources/prompt-library.html
+
+• What Stays With the PM
+https://chromaticguide.com/resources/what-stays-with-the-pm.html
+
+• Before You Build, Write the Spec
+https://chromaticguide.com/resources/spec-template.html
+
+• AI Experiment Playbook
+https://chromaticguide.com/resources/experiment-playbook.html
+
+Presentation:
+https://chromaticguide.com/presentation/ai-for-project-managers.html
+
+Connect:
+https://www.linkedin.com/in/meloniepoole/
+https://chromaticguide.com/
+
+Tonight's thread:
+• I lead the structure, the stories, and the standards. AI helps me get it done.
+• AI can accelerate the work. You still own the judgment, the story, and the standard.
+
+Questions welcome — I'll stay on for Q&A.</textarea>
+      <p class="copy-hint">Select all (<kbd>Ctrl+A</kbd>) and copy (<kbd>Ctrl+C</kbd>), or triple-click the box.</p>
+      <button type="button" id="copyChat" style="margin-top:0.5rem;font-family:inherit;font-size:0.85rem;padding:0.4rem 0.85rem;border:1px solid var(--border);background:var(--panel);border-radius:4px;cursor:pointer;">Copy to clipboard</button>
+      <span id="copyStatus" style="font-size:0.82rem;color:var(--soft);margin-left:0.5rem;"></span>
+    </div>
+  </details>
+
+  <!-- STORY GUIDE -->
+  <details class="kit-section" id="story-guide">
+    <summary>Q&amp;A backup stories</summary>
+    <div class="section-body">
+      <h3>Lead story: ATLAS</h3>
+      <p>PM-native: portfolio truth, governance, leadership conversations.</p>
+      <ul>
+        <li><strong>Setup:</strong> Execution in ADO — nothing at leadership altitude</li>
+        <li><strong>Turn:</strong> Portfolio Area → Project → Milestone; link out, don&rsquo;t duplicate</li>
+        <li><strong>Build:</strong> Spec-driven in Cursor; Azure + SSO; audit trail</li>
+        <li><strong>Punchline:</strong> Built the instrument — still holding trust in the room</li>
+      </ul>
+
+      <h3>Meta story: this deck</h3>
+      <p class="quote">You&rsquo;re looking at the artifact — browser-native deck built the same way. Structure and story are mine.</p>
+
+      <h3>AI Superworkers</h3>
+      <p>1000+ member community — practical demos, starter packs, workshops. Change leadership with guardrails and play.</p>
+
+      <h3>90-second backups</h3>
+      <table>
+        <thead><tr><th>Story</th><th>Use when…</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Onboarding apps</strong></td><td>Human ramp + AI-built checklist; you still walk people through live</td></tr>
+          <tr><td><strong>The Funnel</strong></td><td>Off-the-shelf didn&rsquo;t fit ~45 people, 25+ projects</td></tr>
+          <tr><td><strong>ADO sync</strong></td><td>Manual hierarchy pain → one prompt, preview before push</td></tr>
+          <tr><td><strong>Connected diagram</strong></td><td>23 programs — interactive map in hours</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Common Q&amp;A</h3>
+      <dl class="qa">
+        <dt>Is AI replacing PMs?</dt>
+        <dd>No — it replaces drudge if you let it. Judgment, relationships, accountability stay yours.</dd>
+        <dt>Where do I start?</dt>
+        <dd>One Copilot task this week. Same guardrails at every step.</dd>
+        <dt>Cursor vs Claude Code?</dt>
+        <dd>Similar outcomes — editor vs terminal. Pick what fits your comfort; same review discipline.</dd>
+        <dt>What about data security?</dt>
+        <dd>Approved tools only. Don&rsquo;t paste sensitive data into unapproved services.</dd>
+      </dl>
+
+      <h3>Suggested open (alternate)</h3>
+      <p class="quote">I&rsquo;m not here to convince you AI is magic. I&rsquo;m here to share how I use it without letting it replace what holds programs together.</p>
+    </div>
+  </details>
+
+  <script>
+    (function () {
+      var sections = document.querySelectorAll("details.kit-section, details.slide-note");
+      document.getElementById("expandAll").onclick = function () {
+        sections.forEach(function (d) { d.open = true; });
+      };
+      document.getElementById("collapseAll").onclick = function () {
+        sections.forEach(function (d) { d.open = false; });
+      };
+      var hash = location.hash.slice(1);
+      if (hash) {
+        var el = document.getElementById(hash);
+        if (el && el.tagName === "DETAILS") el.open = true;
+      }
+      document.getElementById("copyChat").onclick = function () {
+        var ta = document.getElementById("chatMessage");
+        var status = document.getElementById("copyStatus");
+        ta.select();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(ta.value).then(function () {
+            status.textContent = "Copied!";
+            setTimeout(function () { status.textContent = ""; }, 2000);
+          });
+        } else {
+          document.execCommand("copy");
+          status.textContent = "Copied!";
+          setTimeout(function () { status.textContent = ""; }, 2000);
+        }
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" aria-hidden="true">
+  <!-- 3 decks -->
+  <rect x="10" y="40" width="48" height="36" rx="3" fill="#f6f3ed" stroke="#d4cec4"/>
+  <rect x="18" y="32" width="48" height="36" rx="3" fill="#fff" stroke="#d4cec4"/>
+  <rect x="26" y="24" width="48" height="36" rx="3" fill="#fff" stroke="#6b6560"/>
+  <text x="50" y="46" text-anchor="middle" font-size="8" fill="#6b6560">PPT</text>
+  <text x="50" y="78" text-anchor="middle" font-size="9" fill="#4a4540">3 decks</text>
+  <!-- arrow -->
+  <path d="M90 52 L130 52" stroke="#7a3b2e" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- AI -->
+  <rect x="138" y="28" width="64" height="48" rx="8" fill="#ebe6dc" stroke="#4a6670" stroke-width="2"/>
+  <text x="170" y="58" text-anchor="middle" font-family="monospace" font-size="13" fill="#4a6670">AI</text>
+  <path d="M210 52 L250 52" stroke="#7a3b2e" stroke-width="2"/>
+  <!-- Excel -->
+  <rect x="258" y="24" width="88" height="56" rx="4" fill="#fff" stroke="#059669" stroke-width="2"/>
+  <line x1="268" y1="40" x2="336" y2="40" stroke="#059669" stroke-width="1" opacity="0.5"/>
+  <line x1="268" y1="52" x2="336" y2="52" stroke="#d4cec4"/>
+  <line x1="268" y1="64" x2="336" y2="64" stroke="#d4cec4"/>
+  <text x="302" y="98" text-anchor="middle" font-size="9" fill="#4a4540">R � I � D table</text>
+  <text x="180" y="145" text-anchor="middle" font-size="10" fill="#7a3b2e" font-weight="600">~8 hours � minutes</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#7a3b2e"/>
+    </marker>
+  </defs>
+</svg>

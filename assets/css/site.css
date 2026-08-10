@@ -1,0 +1,420 @@
+/* Chromatic Guide — editorial, light */
+
+:root {
+  --ink: #2a2724;
+  --ink-soft: #6b5344;
+  --muted: #6c5e4f;
+  --rule: #e4ddd4;
+  --paper: #f6f3ed;
+  --paper-deep: #ebe6dc;
+  --link: #7a3b2e;
+  --link-hover: #5c2d23;
+  --cg-taupe: #6c5e4f;
+  --cg-ochre: #8b6914;
+  --cg-brown: #6b5344;
+  --cg-slate: #4a6670;
+  --cg-plum: #5a4a6e;
+  --cg-terra: #7a3b2e;
+  --max-read: 38rem;
+  --max-wide: 44rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand {
+  font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Single hairline spectrum — musical, not a hero gradient */
+.spectrum {
+  height: 2px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    var(--cg-taupe, #6c5e4f) 0%,
+    var(--cg-ochre, #8b6914) 18%,
+    var(--cg-brown, #6b5344) 36%,
+    var(--cg-slate, #4a6670) 54%,
+    var(--cg-plum, #5a4a6e) 72%,
+    var(--cg-terra, #7a3b2e) 100%
+  );
+  opacity: 0.85;
+}
+
+/* ── Header ── */
+.site-header {
+  padding: 2rem 1.25rem 0;
+  background: var(--paper);
+}
+
+.header-inner {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.brand-title {
+  display: block;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+
+.brand-title em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 0.92em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover {
+  color: var(--link);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ── Layout ── */
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.container--narrow {
+  max-width: var(--max-read);
+}
+
+/* ── Home hero ── */
+.hero {
+  padding: 2.75rem 0 0;
+}
+
+.hero h1 {
+  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  line-height: 1.35;
+  margin: 0 0 1.25rem;
+  max-width: var(--max-read);
+}
+
+.hero-lead {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: var(--max-read);
+}
+
+/* ── Sections ── */
+.section {
+  padding: 2.5rem 0 0;
+}
+
+.section h2 {
+  font-size: 1.15rem;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+/* Editorial link list instead of cards */
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.link-list li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.link-list a {
+  display: block;
+  padding: 1.1rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-list a:hover .link-list-title {
+  color: var(--link);
+}
+
+.link-list-title {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  transition: color 0.15s ease;
+}
+
+.link-list-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.link-list-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+/* Pull quote / stance block */
+.stance {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 3px double var(--rule);
+}
+
+.stance p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+}
+
+.stance p:last-child {
+  margin-bottom: 0;
+}
+
+.stance-label {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+/* ── Prose pages ── */
+.prose {
+  padding: 2.25rem 0 3rem;
+}
+
+.prose h1 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin: 0 0 0.35rem;
+}
+
+.prose .page-subtitle {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 2rem;
+}
+
+.prose h2 {
+  font-size: 1.1rem;
+  margin: 2.25rem 0 0.65rem;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+}
+
+.prose ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+}
+
+.prose li {
+  margin-bottom: 0.35rem;
+}
+
+.prose li::marker {
+  color: var(--muted);
+}
+
+.note {
+  margin: 2rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.page-heading {
+  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  margin: 0 0 0.5rem;
+}
+
+.section p {
+  margin: 0;
+}
+
+.section p.muted {
+  color: var(--muted);
+}
+
+.section p.soft {
+  color: var(--ink-soft);
+}
+
+/* Resource entries */
+.use-case {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.use-case:first-of-type {
+  padding-top: 0;
+}
+
+.use-case h3 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.08rem;
+  margin: 0 0 0.35rem;
+}
+
+.use-case-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.prompt-block {
+  margin: 0.65rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.featured-link {
+  display: block;
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-link:hover .featured-title {
+  color: var(--link);
+}
+
+.featured-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.featured-title {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+}
+
+.featured-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ── Footer ── */
+.site-footer {
+  margin-top: 3rem;
+  padding: 0 1.25rem 2rem;
+}
+
+.footer-inner {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.footer-inner a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-inner a:hover {
+  color: var(--link);
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    padding-top: 1.5rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
