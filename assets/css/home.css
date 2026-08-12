@@ -113,6 +113,8 @@ html {
 
   position: relative;
 
+  isolation: isolate;
+
   width: 100%;
 
   max-width: 100%;
@@ -306,7 +308,7 @@ html {
 
   position: relative;
 
-  z-index: 5;
+  z-index: 1;
 
   flex: 1;
 
@@ -330,7 +332,7 @@ html {
 
   letter-spacing: -0.02em;
 
-  max-width: 100%;
+  max-width: min(38rem, 100%);
 
   margin: 0;
 
@@ -344,23 +346,28 @@ html {
 
 
 
-/* Circular Pantone fan — decorative only; hidden on narrow screens */
+/* Circular Pantone fan — decorative only; off by default so mid-width
+   laptops (Surface + Edge) never get text under the wheel */
 
 .home-wheel {
 
+  display: none;
+
   position: fixed;
 
-  right: -10%;
+  right: 0;
 
-  bottom: -12%;
+  bottom: 0;
 
-  width: min(70vw, 640px);
+  width: 520px;
 
-  height: min(70vw, 640px);
+  height: 520px;
 
   pointer-events: none;
 
-  z-index: 0;
+  z-index: -1;
+
+  opacity: 0.9;
 
 }
 
@@ -1146,26 +1153,6 @@ html {
 
 
 
-@media (max-width: 1024px) {
-
-  .home-wheel {
-
-    opacity: 0.35;
-
-    right: -28%;
-
-    bottom: -20%;
-
-    width: min(55vw, 420px);
-
-    height: min(55vw, 420px);
-
-  }
-
-}
-
-
-
 @media (max-width: 768px) {
 
   .home-header {
@@ -1222,16 +1209,6 @@ html {
 
 
 
-  /* Remove decorative wheel on phones/tablets — it was covering text */
-
-  .home-wheel {
-
-    display: none !important;
-
-  }
-
-
-
   .home-main {
 
     padding-bottom: 2rem;
@@ -1242,7 +1219,10 @@ html {
 
 
 
-@media (min-width: 1100px) {
+/* Wide desktops only — keep wheel clear of the ~38rem content column.
+   Surface / Edge mid-widths stay wheel-free (was overlapping copy). */
+
+@media (min-width: 1400px) {
 
   .home-header {
 
@@ -1258,6 +1238,36 @@ html {
 
     padding-left: clamp(1.25rem, 4vw, 3rem);
 
+    padding-right: max(clamp(1.25rem, 4vw, 3rem), 28rem);
+
+  }
+
+
+
+  .home-wheel {
+
+    display: block;
+
+    right: -8%;
+
+    bottom: -14%;
+
+    width: min(42vw, 560px);
+
+    height: min(42vw, 560px);
+
+    opacity: 0.95;
+
+  }
+
+}
+
+
+
+@media (min-width: 1680px) {
+
+  .home-main {
+
     padding-right: clamp(1.25rem, 4vw, 3rem);
 
   }
@@ -1266,15 +1276,13 @@ html {
 
   .home-wheel {
 
-    right: -5%;
+    right: -4%;
 
-    bottom: -8%;
+    bottom: -10%;
 
-    width: 700px;
+    width: min(38vw, 640px);
 
-    height: 700px;
-
-    opacity: 1;
+    height: min(38vw, 640px);
 
   }
 

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cursor for PMs Who Build — Chromatic Guide</title>
+  <meta name="description" content="How a non-technical project manager gets started in Cursor — install, open a folder, ask, cut, ship. From the Partnering with AI PMI talk." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/home.css?v=8" />
+</head>
+<body class="page-home">
+  <div class="home-shell">
+    <header class="home-header">
+      <a class="home-logo" href="../index.html">
+        <span class="home-logo-mark" aria-hidden="true"></span>
+        <span class="home-logo-text">Chromatic Guide</span>
+      </a>
+      <nav class="home-nav" aria-label="Main">
+        <a class="home-pill" href="index.html" aria-current="page">Resources</a>
+        <a class="home-pill" href="../about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="home-main">
+      <article class="home-content home-prose">
+        <p class="home-from-talk">From the PMI talk · Partnering with AI</p>
+        <h1 class="home-headline">Cursor for PMs Who Build</h1>
+
+        <p class="home-resource-note">
+          I wasn&rsquo;t a developer. I was a PM who needed something that didn&rsquo;t exist off the shelf — so I learned to partner with AI in Cursor.
+          The first hour feels complicated. This page is the path I wish I&rsquo;d had: what it is, how to get in the door, and how to work once you&rsquo;re there.
+          Not a tour of every button.
+        </p>
+
+        <h2>What Cursor is (in PM words)</h2>
+        <p>
+          Think of it as an AI-assisted workspace that can see a <strong>whole project folder</strong> — notes, specs, drafts, HTML, whatever you put in there —
+          not just one chat window with no memory of your files.
+        </p>
+        <p>
+          Copilot in Word helps you draft <em>inside</em> one document. Cursor helps when the work lives across files and you&rsquo;re trying to <strong>build</strong> something:
+          an action tracker, a status one-pager, a small internal page, a tool that fits your process.
+        </p>
+        <p>
+          When you open it the first time, it looks like a coding app. Ignore most of that.
+          For a PM, you really need three things: a folder of sources, a place to ask, and the discipline to cut what&rsquo;s wrong before anyone else sees it.
+        </p>
+
+        <h2>When to use it vs Copilot</h2>
+        <div class="home-split">
+          <div class="home-split-col home-split-col--help">
+            <h2>Copilot (or daily chat)</h2>
+            <ul>
+              <li>Notes, email, Word, Teams</li>
+              <li>Quick drafts inside M365</li>
+              <li>Thinking something through in one thread</li>
+              <li>No need for a project folder</li>
+            </ul>
+          </div>
+          <div class="home-split-col home-split-col--own">
+            <h2>Cursor</h2>
+            <ul>
+              <li>You&rsquo;re <strong>building</strong> something</li>
+              <li>Story across many files in a folder</li>
+              <li>Nothing off-the-shelf fits</li>
+              <li>You already wrote what you need (spec)</li>
+            </ul>
+          </div>
+        </div>
+        <p>Same quality bar on every tool. Approved tools only — check your company policy before you download anything.</p>
+
+        <h2>Before you open it</h2>
+        <p>
+          Write the spec first. What problem, who it&rsquo;s for, what it must do, how you&rsquo;ll know it worked.
+          AI came later for ATLAS. The specs are why people trust it.
+        </p>
+        <p>
+          Use <a href="spec-template.html">Before You Build, Write the Spec</a> —
+          fill it in, hit <strong>Copy template</strong>, and save it as a file in your project folder (e.g. <code>SPEC.md</code>).
+          That file becomes the ground truth for everything you ask next.
+        </p>
+        <p>
+          Also decide what <em>not</em> to put in the folder: passwords, customer data you shouldn&rsquo;t share with a tool, anything your policy forbids.
+          If you wouldn&rsquo;t paste it into an approved chat tool, don&rsquo;t drop it into Cursor.
+        </p>
+
+        <h2>How to get started (the part that feels hard)</h2>
+        <p>
+          Cursor is not &ldquo;open a website and type.&rdquo; You install an app, open a folder on your computer, then talk to AI about what&rsquo;s in that folder.
+          Here is a first-session path that works for a non-developer.
+        </p>
+
+        <ol class="home-playbook-steps">
+          <li>
+            <h3>Confirm you&rsquo;re allowed</h3>
+            <p>
+              Check approved tools and data rules at your company. If Cursor isn&rsquo;t approved, stop here and use what is —
+              the craft still applies. Don&rsquo;t invent a workaround with sensitive work.
+            </p>
+          </li>
+          <li>
+            <h3>Install Cursor</h3>
+            <p>
+              Go to the official Cursor site, download for your computer (Windows or Mac), install, and sign in.
+              You may need a work or personal account depending on how your org licenses it.
+              If IT has a managed install path, use that.
+            </p>
+          </li>
+          <li>
+            <h3>Make a project folder first</h3>
+            <p>
+              On your Desktop or in Documents, create a folder with a clear name — e.g. <code>status-one-pager</code> or <code>meeting-actions-pilot</code>.
+              Put your sources in it <em>before</em> you open Cursor:
+            </p>
+            <ul>
+              <li>Your filled-in spec (<code>SPEC.md</code> or a Word/PDF you can paste from)</li>
+              <li>Meeting notes, old status, excerpts you&rsquo;re allowed to use</li>
+              <li>Examples of the output format you want (a past one-pager is gold)</li>
+            </ul>
+            <p>Empty folder + vague ask = AI invents. Folder with real inputs = AI has something to work from.</p>
+          </li>
+          <li>
+            <h3>Open the folder (this is the non-obvious step)</h3>
+            <p>
+              Launch Cursor. Use <strong>File → Open Folder</strong> (or the welcome &ldquo;Open project&rdquo; path) and select the folder you just made —
+              not a single file, the whole folder.
+            </p>
+            <p>
+              You should see your files in a left-hand list. That list is how Cursor &ldquo;sees&rdquo; the project.
+              If you only open one document, you lose the point of the tool.
+            </p>
+          </li>
+          <li>
+            <h3>Ignore the scary UI</h3>
+            <p>
+              There will be panels, icons, and words aimed at developers. You do not need them yet.
+              For session one, care about: <strong>file list on the left</strong>, <strong>chat / AI panel</strong> (usually on the right or via a chat icon),
+              and the main area where files open when you click them.
+            </p>
+            <p>
+              You are not learning to be an engineer this week. You are learning to open a folder and ask a clear question.
+            </p>
+          </li>
+          <li>
+            <h3>Start the AI chat with your spec</h3>
+            <p>
+              Open the chat or agent panel. Paste your spec, or tell it to read <code>SPEC.md</code> in the folder.
+              Use a starter from below — begin with <em>outline / clarifying questions only</em>, not &ldquo;build the whole thing.&rdquo;
+            </p>
+            <p>
+              If the tool offers to edit files or run commands, pause. For a first build, prefer: it proposes a plan → you say yes → it drafts one file → you read it.
+            </p>
+          </li>
+          <li>
+            <h3>Read every change before you accept it</h3>
+            <p>
+              When Cursor suggests edits, it will show what it wants to add or change. Treat that like a junior teammate&rsquo;s pull request:
+              skim the whole thing, cut what&rsquo;s wrong out loud in the next message, then continue.
+            </p>
+            <p>
+              Do not click Accept on a wall of text you haven&rsquo;t read. Speed without review is how craft dies.
+            </p>
+          </li>
+          <li>
+            <h3>Save where you can find it</h3>
+            <p>
+              Your work lives in that project folder on your computer. Copy the finished file wherever your team actually works
+              (SharePoint, email, Confluence) only after you&rsquo;d put your name on it.
+            </p>
+          </li>
+        </ol>
+
+        <blockquote class="home-takeaway-quote">
+          Open a folder. Ask from the spec. Cut before you ship. That&rsquo;s the whole game.
+        </blockquote>
+
+        <h2>When you get stuck in the UI</h2>
+        <ul>
+          <li><strong>&ldquo;It doesn&rsquo;t see my files.&rdquo;</strong> — You probably opened a file, not a folder. File → Open Folder again.</li>
+          <li><strong>&ldquo;I can&rsquo;t find chat.&rdquo;</strong> — Look for a chat / AI icon in the side bar, or the keyboard shortcut shown under View / AI menus. Names move between versions; the idea stays: a panel where you type to the model.</li>
+          <li><strong>&ldquo;It asked to run something.&rdquo;</strong> — For a first PM project, decline unless you understand what it will do. Prefer file edits you can read.</li>
+          <li><strong>&ldquo;The answer looks confident but wrong.&rdquo;</strong> — That&rsquo;s normal. Paste back: what&rsquo;s wrong, why, and what to do instead. The cut is the work.</li>
+          <li><strong>&ldquo;I don&rsquo;t know what model / mode to pick.&rdquo;</strong> — Use the default. Mode names change; your loop doesn&rsquo;t: context → ask → review → cut.</li>
+        </ul>
+
+        <h2>The working loop (once you&rsquo;re in)</h2>
+        <ol class="home-playbook-steps">
+          <li>
+            <h3>Sources in a folder</h3>
+            <p>Notes, old decks, transcripts, your written spec. Context first — not &ldquo;write my app from nothing.&rdquo;</p>
+          </li>
+          <li>
+            <h3>Ask</h3>
+            <p>
+              Outline or draft only at first. Say audience, format, and what &ldquo;good&rdquo; looks like.
+              Ask it to flag what it&rsquo;s unsure about. Ask clarifying questions before a big build.
+            </p>
+          </li>
+          <li>
+            <h3>Cut what&rsquo;s wrong out loud</h3>
+            <p>
+              Wrong, fluffy, overconfident — delete it. Tell the AI why in the next message.
+              That cut is the craft. Keep going until you&rsquo;d put your name on it.
+            </p>
+          </li>
+          <li>
+            <h3>Ship small, review hard</h3>
+            <p>One useful artifact. Open the file yourself. Click through it. Don&rsquo;t hand anyone a draft you haven&rsquo;t read end to end.</p>
+          </li>
+        </ol>
+
+        <blockquote class="home-takeaway-quote">
+          The craft moment isn&rsquo;t the prompt. It&rsquo;s the edit.
+        </blockquote>
+
+        <h2>First builds that fit a PM</h2>
+        <p>Start smaller than you think. One finished artifact beats a half-built &ldquo;platform.&rdquo;</p>
+        <ul>
+          <li>
+            <strong>Meeting notes → action table</strong> —
+            Action | Owner | Due | Status. Lowest risk, highest reuse. Do this before you build anything flashy.
+          </li>
+          <li>
+            <strong>Status one-pager</strong> —
+            For leadership, from real sources in the folder. Outline first, then prose, then polish.
+          </li>
+          <li>
+            <strong>Small internal page or tool</strong> —
+            Something you&rsquo;d use Monday (a simple HTML tracker, a checklist page), after a written spec.
+            Not a multi-system integration. Not production automation on day one.
+          </li>
+        </ul>
+        <p>
+          You are not &ldquo;learning to code.&rdquo; You are clearing a real blockage with a partner that moves faster —
+          while you hold the structure, the story, and the standard.
+        </p>
+
+        <h2>Stop signs</h2>
+        <ul>
+          <li>Unapproved tools or sensitive data in the wrong place</li>
+          <li>Shipping without reading the output end to end</li>
+          <li>Letting AI invent requirements you never wrote</li>
+          <li>High-risk automation as your first build</li>
+          <li>Accepting file changes or commands you don&rsquo;t understand</li>
+          <li>Anything you couldn&rsquo;t explain in the room</li>
+        </ul>
+        <p>
+          Boundaries still apply — see <a href="what-stays-with-the-pm.html">What Stays With the PM</a>.
+          Treat first builds like experiments — see <a href="experiment-playbook.html">AI Experiment Playbook</a>.
+        </p>
+
+        <h2>Copy-paste starters</h2>
+        <p>Approved tools only. Point Cursor at the folder (or paste files). Cut before you share.</p>
+
+        <div class="home-use-case">
+          <h3>First message after Open Folder</h3>
+          <div class="home-prompt-block">I am a project manager, not a developer. I opened this folder on purpose.
+
+Read SPEC.md (or the spec I paste below). Confirm you understand:
+• the problem
+• the users
+• the requirements
+• the success criteria
+
+Ask me clarifying questions before you build anything.
+Do not invent requirements I did not write.
+Propose a short build plan — outline only — then wait for my OK.</div>
+        </div>
+
+        <div class="home-use-case">
+          <h3>Start from the spec</h3>
+          <div class="home-prompt-block">Read the spec in this folder (or pasted below). Confirm you understand problem, users, requirements, and success criteria.
+
+Ask me clarifying questions before you build anything.
+Do not invent requirements I did not write.
+Propose a short build plan — outline only — then wait for my OK.</div>
+        </div>
+
+        <div class="home-use-case">
+          <h3>Story across sources</h3>
+          <div class="home-prompt-block">Read these files. I am a project manager briefing leadership.
+
+What is the through-line? Propose a short narrative outline:
+• What we committed to
+• Where we are
+• What is in the way
+• What I need from them (if anything)
+
+Outline only — no slides yet.
+Flag anything I should verify before I say it out loud.</div>
+        </div>
+
+        <div class="home-use-case">
+          <h3>Meeting → action table</h3>
+          <div class="home-prompt-block">From meeting-notes (in this folder or pasted), create a table: Action | Owner | Due | Status.
+
+Rules:
+• Only actions clearly assigned or agreed
+• Missing owner or due → &ldquo;TBD — confirm&rdquo;
+• Ambiguities listed at the top
+• Do not invent owners or dates</div>
+        </div>
+
+        <div class="home-use-case">
+          <h3>Build one small artifact</h3>
+          <div class="home-prompt-block">Using the approved spec, build [one page / action table HTML / status draft].
+
+Constraints:
+• Match the requirements — nothing extra
+• Plain language
+• Flag unknowns for me
+• Show me the plan first; wait for my OK before editing files
+• I will review before anyone else sees it</div>
+        </div>
+
+        <div class="home-use-case">
+          <h3>Cut / edit my draft</h3>
+          <div class="home-prompt-block">Here is my draft:
+
+[paste draft]
+
+Edit it like a skeptical PM whose name will be on it.
+• Cut what is wrong, fluffy, overconfident, or unsupported
+• For each cut, tell me why in one short line
+• Do not add new claims I did not make
+• Return: (1) edited draft (2) list of cuts with reasons</div>
+        </div>
+
+        <p class="home-resource-note">
+          More PM prompts (meetings, risks, leadership): <a href="prompt-library.html">PM AI Prompt Library</a>.
+        </p>
+
+        <p class="home-thesis-line">Accelerate the work. Don&rsquo;t dilute the craft.</p>
+        <p><a href="index.html">← All take-home resources</a></p>
+      </article>
+    </main>
+
+    <div class="home-wheel" aria-hidden="true">
+      <img src="../assets/pantone-wheel.svg" width="800" height="800" alt="" />
+    </div>
+
+    <footer class="home-foot">
+      <span>Work, like music, lives in the nuance.</span>
+    </footer>
+  </div>
+</body>
+</html>
